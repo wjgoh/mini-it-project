@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: da035f836168cac42852d454ad722677
+  productGUID: 60c6ce43e94a6344fb5c77e2fe3947ee
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: mini-it-project2
+  productName: Mini-It-Project
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -629,14 +629,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: mini-it-project2
+  metroPackageName: Mini-It-Project
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: mini-it-project2
+  metroApplicationDescription: Mini-It-Project
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -703,13 +703,13 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 6db71904-8233-45da-aa5f-d4185e62bb4a
+  cloudProjectId: 350d1fa2-e5e5-4aac-abd6-ad209e172914
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: mini-it-project2
-  organizationId: mini-it-project
+  projectName: Mini-It-Project
+  organizationId: gibsonkhoo
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
