@@ -2688,6 +2688,10 @@ PrefabInstance:
       propertyPath: m_DefaultActionMap
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3182926092256601356, guid: f1ad8372ef507e943a3d2df9eddcfe94, type: 3}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5204117356734633421, guid: f1ad8372ef507e943a3d2df9eddcfe94, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
