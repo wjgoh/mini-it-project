@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 37eb42faf01351845a4acba8daef4f4d
+guid: 8e4eba6ea01df414b8d5434efa23eca4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 13
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -110,11 +110,32 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_0
+      name: Fences_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05002058ac327fc4183f92e796007929
+      internalID: 767377822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fences_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 160
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -124,18 +145,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c27dc85bd3672a4b86b6749905fd1c8
-      internalID: 1842275020
+      spriteID: 85a3849c38834cd428a3abc8ffc69551
+      internalID: 1480469222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_1
+      name: Fences_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 160
+        x: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -145,18 +166,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31186e94e998040478888c0821785e78
-      internalID: -454616392
+      spriteID: 74b333adb3d21fb4e8d5af365334f5b7
+      internalID: -890093469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_2
+      name: Fences_3
       rect:
         serializedVersion: 2
-        x: 112
-        y: 160
+        x: 48
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -166,18 +187,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b055789724658fb498d072ecbbb672ee
-      internalID: -91974949
+      spriteID: 72a3faa4cae7ee44ab68a540a95e9bf0
+      internalID: 1179846279
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_3
+      name: Fences_4
       rect:
         serializedVersion: 2
-        x: 160
-        y: 160
+        x: 0
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -187,102 +208,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca08f86afd0da0149a81241cf61d5363
-      internalID: 1081118521
+      spriteID: ba5bfbc40597f7f409420eccd57ddc7a
+      internalID: -532149286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_4
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 673cfc585e4232d4186983e43254e4bb
-      internalID: -1686074139
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Basic Charakter Spritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5575d1ee6faacbb4e94e668117f5ff4c
-      internalID: 371423312
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Basic Charakter Spritesheet_6
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2a44192f004edaf4796dfc70109abeef
-      internalID: 833973152
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Basic Charakter Spritesheet_7
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff999eed14a541e46afceb2062507ff9
-      internalID: 2001649946
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Basic Charakter Spritesheet_8
+      name: Fences_5
       rect:
         serializedVersion: 2
         x: 16
-        y: 64
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -292,18 +229,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a50d4920bb9fdb4687be1baab5beeb3
-      internalID: -1967930221
+      spriteID: 0a51f6d239eb3e0428c014eca32c174b
+      internalID: 2131123883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_9
+      name: Fences_6
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 32
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -313,18 +250,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 022b3a10bd3ef524691994d38ad24935
-      internalID: 308975421
+      spriteID: 27e65d351e3ccf64db61c234d5963633
+      internalID: -469613129
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_10
+      name: Fences_7
       rect:
         serializedVersion: 2
-        x: 112
-        y: 64
+        x: 48
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -334,18 +271,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c5762145f143644d91b8c37c280079e
-      internalID: 1075528597
+      spriteID: 7479ea492e352cc498df6aa4b8532f8f
+      internalID: -1890493897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_11
+      name: Fences_8
       rect:
         serializedVersion: 2
-        x: 160
-        y: 64
+        x: 0
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -355,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9e395746d93f1741ac10a370e3d5e23
-      internalID: 1967394874
+      spriteID: 4fe32b6d9e1fc4a45adc1964582f225f
+      internalID: -1186302439
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_12
+      name: Fences_9
       rect:
         serializedVersion: 2
         x: 16
@@ -376,17 +313,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44092ef566757de4bb9503dbdd6ce504
-      internalID: -1366162624
+      spriteID: fadc2295c955cfa4983af2c12114c90c
+      internalID: 449597344
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_13
+      name: Fences_10
       rect:
         serializedVersion: 2
-        x: 64
+        x: 32
         y: 16
         width: 16
         height: 16
@@ -397,17 +334,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69c33baba9165d94bb5d8a574ff1d255
-      internalID: -1567315913
+      spriteID: 0e08e2e3e3893f14b91c6edbcecf3829
+      internalID: -749434411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_14
+      name: Fences_11
       rect:
         serializedVersion: 2
-        x: 112
+        x: 48
         y: 16
         width: 16
         height: 16
@@ -418,18 +355,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2335d6424d6e61142827f01ec86da023
-      internalID: -1036330760
+      spriteID: c16073ad170b7a34489703af10f3f983
+      internalID: -1114814760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_15
+      name: Fences_12
       rect:
         serializedVersion: 2
-        x: 160
-        y: 16
+        x: 0
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -439,8 +376,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6fc3e26ba85677428ccf508107c05bf
-      internalID: 1871400788
+      spriteID: c5888f6e901991347aa96652c34a9215
+      internalID: -943052622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fences_13
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62dc5b78ab898e14290a8eb56be68c30
+      internalID: -670230936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fences_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d179bcbff8b5dc842aced9d5743f48d3
+      internalID: -1207056405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fences_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9daef3d976048248b1987d98fb09c1d
+      internalID: -1852974426
       vertices: []
       indices: 
       edges: []
@@ -456,22 +456,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Basic Charakter Spritesheet_0: 1842275020
-      Basic Charakter Spritesheet_1: -454616392
-      Basic Charakter Spritesheet_10: 1075528597
-      Basic Charakter Spritesheet_11: 1967394874
-      Basic Charakter Spritesheet_12: -1366162624
-      Basic Charakter Spritesheet_13: -1567315913
-      Basic Charakter Spritesheet_14: -1036330760
-      Basic Charakter Spritesheet_15: 1871400788
-      Basic Charakter Spritesheet_2: -91974949
-      Basic Charakter Spritesheet_3: 1081118521
-      Basic Charakter Spritesheet_4: -1686074139
-      Basic Charakter Spritesheet_5: 371423312
-      Basic Charakter Spritesheet_6: 833973152
-      Basic Charakter Spritesheet_7: 2001649946
-      Basic Charakter Spritesheet_8: -1967930221
-      Basic Charakter Spritesheet_9: 308975421
+      Fences_0: 767377822
+      Fences_1: 1480469222
+      Fences_10: -749434411
+      Fences_11: -1114814760
+      Fences_12: -943052622
+      Fences_13: -670230936
+      Fences_14: -1207056405
+      Fences_15: -1852974426
+      Fences_2: -890093469
+      Fences_3: 1179846279
+      Fences_4: -532149286
+      Fences_5: 2131123883
+      Fences_6: -469613129
+      Fences_7: -1890493897
+      Fences_8: -1186302439
+      Fences_9: 449597344
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
