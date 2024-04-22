@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Basic_Furniture_11
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   m_Sprite: {fileID: -1331056411, guid: 9d56e84b7df8bc64bb1f5a6bc769dafb, type: 3}
+=======
+  m_Sprite: {fileID: -142858339, guid: 9d56e84b7df8bc64bb1f5a6bc769dafb, type: 3}
+>>>>>>> Stashed changes
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
