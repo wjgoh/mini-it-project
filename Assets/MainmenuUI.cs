@@ -10,3 +10,4 @@ public class UI : MonoBehaviour
      SceneManager.LoadSceneAsync(1);
   }
 }
+
