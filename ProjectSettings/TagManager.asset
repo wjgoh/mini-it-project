@@ -59,6 +59,18 @@ TagManager:
   - name: House
     uniqueID: 3319963641
     locked: 0
+  - name: Furniture
+    uniqueID: 1933599879
+    locked: 0
+  - name: Flower
+    uniqueID: 941613449
+    locked: 0
+  - name: Dirt
+    uniqueID: 1463190299
+    locked: 0
+  - name: Grass Design
+    uniqueID: 902371933
+    locked: 0
   - name: Player
     uniqueID: 4003319691
     locked: 0
