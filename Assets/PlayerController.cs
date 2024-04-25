@@ -29,10 +29,10 @@ public class PlayerController : MonoBehaviour
 
             if(!success) {
                 success = TryMove(new Vector2(movementInput.x, 0));
+            }
 
-                if(!success){
-                    success = TryMove(new Vector2(0, movementInput.y));
-                }
+            if(!success){
+                success = TryMove(new Vector2(0, movementInput.y));
             }
 
             animator.SetBool("IsPressingS", success);
@@ -42,11 +42,12 @@ public class PlayerController : MonoBehaviour
     }
     
     private bool TryMove(Vector2 direction) {
-        int count = rb.Cast(
-            direction,
-            movementFilter,
-            castCollisions,
-            moveSpeed * Time.fixedDeltaTime + collisionOffset);
+        if(direction != Vector2.zero){
+            int count = rb.Cast(
+                direction,
+                movementFilter,
+                castCollisions,
+                moveSpeed * Time.fixedDeltaTime + collisionOffset);
 
             if (count == 0){
                 rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
@@ -54,7 +55,11 @@ public class PlayerController : MonoBehaviour
             } else{
                 return false;
             }
+        }else {
+            return false;
+        }
     }
+
     void OnMove(InputValue movementValue){
         movementInput = movementValue.Get<Vector2>();
     }
