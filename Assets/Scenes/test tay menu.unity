@@ -675,8 +675,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 8
-    height: 8
+    width: 7
+    height: 7
 --- !u!222 &758307318
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -718,9 +718,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c6b6e3d4d5890a40a183eff7da4ff2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeedX: 0.1
-  scrollSpeedY: 0.1
-  backgroundImage: {fileID: 758307317}
+  scrollSpeedX: 0.5
+  scrollSpeedY: 0.5
 --- !u!1 &853827707
 GameObject:
   m_ObjectHideFlags: 0
