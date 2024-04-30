@@ -718,8 +718,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c6b6e3d4d5890a40a183eff7da4ff2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeedX: 0.5
-  scrollSpeedY: 0.5
+  _img: {fileID: 758307317}
+  _x: 0.15
+  _y: 0.15
 --- !u!1 &853827707
 GameObject:
   m_ObjectHideFlags: 0
