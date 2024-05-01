@@ -16,4 +16,3 @@ public class ScrollingBackground : MonoBehaviour
         _img.uvRect = new Rect(_img.uvRect.position + new Vector2(offsetX, offsetY), _img.uvRect.size); 
     }
 }
-
