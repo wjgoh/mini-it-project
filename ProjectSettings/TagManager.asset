@@ -40,40 +40,43 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
+    locked: 1
   - name: Water
     uniqueID: 125147045
-    locked: 0
+    locked: 1
   - name: Grass
     uniqueID: 59985315
-    locked: 0
+    locked: 1
   - name: Bridge
     uniqueID: 2634972311
-    locked: 0
+    locked: 1
   - name: Fences
     uniqueID: 3830612745
-    locked: 0
+    locked: 1
   - name: Hills
     uniqueID: 3479267331
-    locked: 0
+    locked: 1
   - name: House
     uniqueID: 3319963641
-    locked: 0
+    locked: 1
   - name: Furniture
     uniqueID: 1933599879
-    locked: 0
+    locked: 1
   - name: Flower
     uniqueID: 941613449
-    locked: 0
+    locked: 1
   - name: Dirt
     uniqueID: 1463190299
-    locked: 0
+    locked: 1
   - name: Grass Design
     uniqueID: 902371933
-    locked: 0
+    locked: 1
   - name: Player
     uniqueID: 4003319691
-    locked: 0
+    locked: 1
   - name: Roof
     uniqueID: 2736961963
+    locked: 1
+  - name: UI
+    uniqueID: 980857805
     locked: 0
