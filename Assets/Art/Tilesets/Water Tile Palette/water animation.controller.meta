@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Art/Tilesets/Water Tile Palette/Animation/animated water.asset.meta
+guid: ddf75f4c8f610a14fb24d81d55c96f65
+========
+guid: d2a26b017f3cf7a4aa1d05e4814cb4cc
+>>>>>>>> main:Assets/Art/Tilesets/Water Tile Palette/water animation.controller.meta
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
