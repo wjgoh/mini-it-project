@@ -121,10 +121,10 @@ TextureImporter:
       name: Sprite sheet for Basic Pack_1
       rect:
         serializedVersion: 2
-        x: 160
-        y: 202
+        x: 208
+        y: 107
         width: 16
-        height: 28
+        height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,12 +142,12 @@ TextureImporter:
       name: Sprite sheet for Basic Pack_0
       rect:
         serializedVersion: 2
-        x: 152
-        y: 199
+        x: 200
+        y: 103
         width: 8
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -163,12 +163,12 @@ TextureImporter:
       name: Sprite sheet for Basic Pack_2
       rect:
         serializedVersion: 2
-        x: 176
-        y: 199
+        x: 224
+        y: 103
         width: 8
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,6 +176,69 @@ TextureImporter:
       bones: []
       spriteID: e1edc3cff84324c469ea9fb9fac0e314
       internalID: 354736093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet for Basic Pack_4
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 128
+        width: 16
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ad8a2c162a3d24ca9eb1ef21b92f4b
+      internalID: 845688825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet for Basic Pack_5
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 107
+        width: 16
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c68e5cf51d6a5344ab9e9fe51b63668
+      internalID: 1293925860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet for Basic Pack_6
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 105
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 8, y: 8, z: 8, w: 8}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3943d1829528b4f905e61f2d718884
+      internalID: 820316811
       vertices: []
       indices: 
       edges: []
@@ -195,6 +258,9 @@ TextureImporter:
       Sprite sheet for Basic Pack_1: 114732771
       Sprite sheet for Basic Pack_2: 354736093
       Sprite sheet for Basic Pack_3: 1490995891
+      Sprite sheet for Basic Pack_4: 845688825
+      Sprite sheet for Basic Pack_5: 1293925860
+      Sprite sheet for Basic Pack_6: 820316811
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
