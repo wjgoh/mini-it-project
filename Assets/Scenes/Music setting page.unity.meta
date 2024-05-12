@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Music setting page.unity.meta
 guid: 3da280fd5dba7934dbc7df8cc9838a65
+========
+guid: 12987f62a3825324098a0e6c51cfee16
+folderAsset: yes
+>>>>>>>> Move_Ani_Test:Assets/Prefab/Player/Animation.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
