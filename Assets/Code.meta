@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Code.meta
 guid: 02afaeb9a52371546bc82311676fe4dd
+========
+guid: bf5ed390f7571bb44986d1727faaf19e
+>>>>>>>> Water_Ani_test:Assets/Art/Tilesets/Door.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
