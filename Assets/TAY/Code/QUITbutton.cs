@@ -4,23 +4,17 @@ using UnityEngine;
 
 public class QUITbutton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+  public void QUITGame()
     {
-        
-    }
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
 
-    // Update is called once per frame
-    void Update()
-    {
+        #else
+            Application.Quit();
         
-    }
+        #endif
 
-    public void QUitgame()
-    {
-        Application.Quit();
     }
-    
 
     
 }
