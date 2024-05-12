@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class BrightnessManager : MonoBehaviour
 {
-    [SerializeField] Slider brightnessSlider;
+    [SerializeField] Slider brightnessSlider; // Reference to the slider for adjusting brightness
 
     void Start()
     {
@@ -12,8 +12,16 @@ public class BrightnessManager : MonoBehaviour
 
     public void ChangeBrightness()
     {
-        Debug.Log("Brightness changed: " + brightnessSlider.value);
+        if (brightnessSlider == null)
+        {
+            Debug.LogError("BrightnessSlider is not assigned in the Unity Editor.");
+            return;
+        }
+
+        // Adjust the ambient light based on the slider value
         RenderSettings.ambientLight = new Color(brightnessSlider.value, brightnessSlider.value, brightnessSlider.value);
+
+        // Save the new brightness value to PlayerPrefs
         SaveBrightness();
     }
 
@@ -23,22 +31,25 @@ public class BrightnessManager : MonoBehaviour
         {
             brightnessSlider.value = PlayerPrefs.GetFloat("brightness");
             RenderSettings.ambientLight = new Color(brightnessSlider.value, brightnessSlider.value, brightnessSlider.value);
-            Debug.Log("Brightness loaded: " + brightnessSlider.value);
         }
         else
         {
             brightnessSlider.value = 1f; // Default brightness value
             SaveBrightness();
-            Debug.Log("Default brightness applied: " + brightnessSlider.value);
         }
     }
 
     private void SaveBrightness()
     {
         PlayerPrefs.SetFloat("brightness", brightnessSlider.value);
-        Debug.Log("Brightness saved: " + brightnessSlider.value);
     }
 }
+
+
+
+
+
+
 
 
 
