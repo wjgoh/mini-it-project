@@ -26221,9 +26221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b0f56b160a97745972a345e159f6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
-  selectedSprite: {fileID: 0}
-  unselectedSprite: {fileID: 0}
 --- !u!114 &1295428602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27085,6 +27082,7 @@ GameObject:
   - component: {fileID: 1453941204}
   - component: {fileID: 1453941207}
   - component: {fileID: 1453941206}
+  - component: {fileID: 1453941208}
   - component: {fileID: 1453941205}
   m_Layer: 5
   m_Name: Canvas
@@ -27178,6 +27176,20 @@ Canvas:
   m_SortingLayerID: 980857805
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1453941208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453941203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee93f3b44b0c9b34bb6250db91338db9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InventoryMenu: {fileID: 1826122552}
+  InventoryButton: {fileID: 1202681466}
 --- !u!1 &1475712364
 GameObject:
   m_ObjectHideFlags: 0
