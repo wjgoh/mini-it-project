@@ -7,6 +7,6 @@ public class BACKtoGame : MonoBehaviour
 {
   public void LaodScene()
   {
-    SceneManager.LoadScene(1);
+    SceneManager.LoadScene(3);
   }
 }
