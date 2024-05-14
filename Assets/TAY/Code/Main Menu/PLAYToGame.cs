@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BACKtoGame : MonoBehaviour
+public class SceneConnectionPlay : MonoBehaviour
 {
-  public void LaodScene()
+  public void LoadScene()
   {
-    SceneManager.LoadScene(1);
+    SceneManager.LoadSceneAsync(1);
   }
 }

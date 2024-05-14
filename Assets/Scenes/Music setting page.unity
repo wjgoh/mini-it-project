@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 777970626}
   - component: {fileID: 777970625}
   - component: {fileID: 777970624}
-  - component: {fileID: 777970623}
+  - component: {fileID: 777970628}
   - component: {fileID: 777970627}
   m_Layer: 5
   m_Name: MENU Button
@@ -604,18 +604,6 @@ RectTransform:
   m_AnchoredPosition: {x: -38.745003, y: -65.955}
   m_SizeDelta: {x: 58.9104, y: 53.9104}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &777970623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777970621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9402caad12843c468818e029af47b61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &777970624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,7 +648,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777970623}
+      - m_Target: {fileID: 777970628}
         m_TargetAssemblyTypeName: SettingsScenePage, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 1
@@ -731,6 +719,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &777970628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777970621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da5e4418956ff94b9aa46b53a0ce5fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &863564371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,7 +1829,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1699587911}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 314fc745120441d489e94b85198fde31, type: 3}
+  m_Script: {fileID: 11500000, guid: e9a0f3611c8ca4b4aa50eeb6999c9147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 1699587913}
@@ -1845,7 +1845,7 @@ GameObject:
   - component: {fileID: 1722087220}
   - component: {fileID: 1722087219}
   - component: {fileID: 1722087218}
-  - component: {fileID: 1722087217}
+  - component: {fileID: 1722087222}
   - component: {fileID: 1722087221}
   m_Layer: 5
   m_Name: BACK Button
@@ -1874,18 +1874,6 @@ RectTransform:
   m_AnchoredPosition: {x: 41.2903, y: -65.955}
   m_SizeDelta: {x: 59.8036, y: 53.91}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1722087217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722087215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d478f2b2558451f428c774a3a8a1a864, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1722087218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1930,7 +1918,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1722087217}
+      - m_Target: {fileID: 1722087222}
         m_TargetAssemblyTypeName: BACKtoGame, Assembly-CSharp
         m_MethodName: LaodScene
         m_Mode: 1
@@ -2001,6 +1989,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1722087222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722087215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d478f2b2558451f428c774a3a8a1a864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1781575157
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,3 +10,4 @@ public class SettingsScenePage : MonoBehaviour
     SceneManager.LoadScene(0);
   }
 }
+
