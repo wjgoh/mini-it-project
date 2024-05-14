@@ -17,6 +17,7 @@ public class Inventory : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && menuActivated)
         {
+            
             InventoryMenu.SetActive(false);
             InventoryButton.SetActive(true);
             menuActivated = false;
@@ -24,9 +25,13 @@ public class Inventory : MonoBehaviour
         
         else if(Input.GetKeyDown(KeyCode.E) && !menuActivated)
         {
+            
             InventoryMenu.SetActive(true);
             InventoryButton.SetActive(false);
             menuActivated = true;
         }
+        
+        
     }
+
 }

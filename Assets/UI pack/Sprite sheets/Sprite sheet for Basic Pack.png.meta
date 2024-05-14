@@ -121,9 +121,9 @@ TextureImporter:
       name: Sprite sheet for Basic Pack_1
       rect:
         serializedVersion: 2
-        x: 208
-        y: 107
-        width: 16
+        x: 209
+        y: 203
+        width: 14
         height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -142,8 +142,8 @@ TextureImporter:
       name: Sprite sheet for Basic Pack_0
       rect:
         serializedVersion: 2
-        x: 200
-        y: 103
+        x: 201
+        y: 198
         width: 8
         height: 34
       alignment: 0
@@ -164,7 +164,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 224
-        y: 103
+        y: 198
         width: 8
         height: 34
       alignment: 0
@@ -184,9 +184,9 @@ TextureImporter:
       name: Sprite sheet for Basic Pack_4
       rect:
         serializedVersion: 2
-        x: 208
-        y: 128
-        width: 16
+        x: 209
+        y: 229
+        width: 15
         height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -205,9 +205,9 @@ TextureImporter:
       name: Sprite sheet for Basic Pack_5
       rect:
         serializedVersion: 2
-        x: 208
-        y: 107
-        width: 16
+        x: 209
+        y: 203
+        width: 15
         height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -252,7 +252,7 @@ TextureImporter:
         width: 28
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
