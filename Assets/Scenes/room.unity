@@ -2033,6 +2033,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621800525}
   m_CullTransparentMesh: 1
+--- !u!1 &642937488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 642937489}
+  - component: {fileID: 642937490}
+  m_Layer: 5
+  m_Name: Scene Connection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &642937489
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642937488}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1866943805}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -7}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &642937490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642937488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fd2c4d05ddb8a246ba08e4585980520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &660917690
 GameObject:
   m_ObjectHideFlags: 0
@@ -7256,6 +7304,7 @@ GameObject:
   - component: {fileID: 1866943808}
   - component: {fileID: 1866943807}
   - component: {fileID: 1866943806}
+  - component: {fileID: 1866943810}
   m_Layer: 5
   m_Name: Button Settings Sqawn
   m_TagString: Untagged
@@ -7272,15 +7321,16 @@ RectTransform:
   m_GameObject: {fileID: 1866943804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.96, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1697783299}
+  - {fileID: 642937489}
   m_Father: {fileID: 1874288457}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 373, y: 198.6}
+  m_AnchoredPosition: {x: 373, y: 181}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1866943806
@@ -7348,8 +7398,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GametoSoundSettings, Assembly-CSharp
+      - m_Target: {fileID: 642937490}
+        m_TargetAssemblyTypeName: Room2settingsmenu, Assembly-CSharp
         m_MethodName: LaodScene
         m_Mode: 1
         m_Arguments:
@@ -7398,6 +7448,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866943804}
   m_CullTransparentMesh: 1
+--- !u!114 &1866943810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866943804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e0e369ef9a71f94c9c9fe3eb41f6b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1874288456
 GameObject:
   m_ObjectHideFlags: 0
