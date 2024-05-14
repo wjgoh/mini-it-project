@@ -71,6 +71,9 @@ TagManager:
   - name: Grass Design
     uniqueID: 902371933
     locked: 1
+  - name: Animals
+    uniqueID: 1086127131
+    locked: 0
   - name: Player
     uniqueID: 4003319691
     locked: 1
