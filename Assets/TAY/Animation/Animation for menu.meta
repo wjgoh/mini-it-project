@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animation for menu.meta
 guid: 89356508b3c2ada4a91a8a7f97fcd2f1
+========
+guid: 4744d5668c68e67469c0454f5c207987
+>>>>>>>> Water_Ani_test:Assets/Animation for SettingsScene.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
