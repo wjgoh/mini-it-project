@@ -1,27 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class SettingsMenu : MonoBehaviour
+public class pauseMenu : MonoBehaviour
 {
-    //Load Scene
-    public void Play()
+  public void PauseMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+
+        #else
+            Application.Quit();
+        
+        #endif
+
     }
 
-    //Quit Game
-    public void Quit()
-    {
-        Application.Quit();
-        Debug.Log("The Player Has Quit The Game");
-    }
-
-    //Settings 
-
-    public void Settings()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+    
 }
