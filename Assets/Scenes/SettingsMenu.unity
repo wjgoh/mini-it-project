@@ -459,8 +459,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 688442445}
-        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: Quit
+        m_TargetAssemblyTypeName: pauseMenu, Assembly-CSharp
+        m_MethodName: PauseMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

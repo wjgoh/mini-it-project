@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 777970626}
   - component: {fileID: 777970625}
   - component: {fileID: 777970624}
-  - component: {fileID: 777970623}
+  - component: {fileID: 777970628}
   - component: {fileID: 777970627}
   m_Layer: 5
   m_Name: MENU Button
@@ -604,18 +604,6 @@ RectTransform:
   m_AnchoredPosition: {x: -38.745003, y: -65.955}
   m_SizeDelta: {x: 58.9104, y: 53.9104}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &777970623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777970621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9402caad12843c468818e029af47b61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &777970624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,8 +648,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777970623}
-        m_TargetAssemblyTypeName: SettingsScenePage, Assembly-CSharp
+      - m_Target: {fileID: 777970628}
+        m_TargetAssemblyTypeName: SettingBACKToMainMenu, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
@@ -731,6 +719,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &777970628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777970621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9402caad12843c468818e029af47b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &863564371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,7 +1326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.111902155, g: 0.8679245, b: 0.19052856, a: 1}
+  m_Color: {r: 0.061884284, g: 0.93710685, b: 0.15270928, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1727,7 +1727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1699587912}
   - component: {fileID: 1699587913}
-  - component: {fileID: 1699587914}
+  - component: {fileID: 1699587915}
   m_Layer: 5
   m_Name: Volume slider
   m_TagString: Untagged
@@ -1808,7 +1808,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1699587914}
+      - m_Target: {fileID: 1699587915}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: ChangeVolume
         m_Mode: 1
@@ -1820,7 +1820,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1699587914
+--- !u!114 &1699587915
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1829,7 +1829,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1699587911}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 314fc745120441d489e94b85198fde31, type: 3}
+  m_Script: {fileID: 11500000, guid: 6588bbc21a2d00a48a544c3062e78e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 1699587913}
@@ -2093,9 +2093,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1781575160}
-        m_TargetAssemblyTypeName: BrightnessManager, Assembly-CSharp
-        m_MethodName: ChangeBrightness
-        m_Mode: 1
+        m_TargetAssemblyTypeName: BrightnessControlAdjust, Assembly-CSharp
+        m_MethodName: AdjustBrightness
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2113,7 +2113,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1781575157}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8dd4f86e92a48c43a8b03506d4640c6, type: 3}
+  m_Script: {fileID: 11500000, guid: af5b65d13fec2d04c860883605788507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   brightnessSlider: {fileID: 1781575159}
