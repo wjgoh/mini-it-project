@@ -1,42 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // Required for UI elements
+using UnityEngine.UI;
 
-public class BrightnessControlAdjust : MonoBehaviour
+public class BrightnessController : MonoBehaviour
 {
-    public Slider brightnessSlider; // Reference to the Slider
+    public Light mainLight;
+    public Slider brightnessSlider;
 
-    private SpriteRenderer[] spriteRenderers;
+    private float maxIntensity = 2.0f; // Maximum intensity of the light
 
     void Start()
     {
-        spriteRenderers = FindObjectsOfType<SpriteRenderer>();
-        Debug.Log($"Found {spriteRenderers.Length} SpriteRenderers."); // Debug log
-
-        if (brightnessSlider != null)
-        {
-            brightnessSlider.value = 1.0f; // Set default value
-            brightnessSlider.onValueChanged.AddListener(AdjustBrightness);
-            Debug.Log("Brightness Slider listener added."); // Debug log
-        }
-        else
-        {
-            Debug.LogError("Brightness Slider is not assigned in the inspector");
-        }
+        // Set the initial brightness value
+        brightnessSlider.value = mainLight.intensity / maxIntensity;
     }
 
-    public void AdjustBrightness(float BrightnessValue)
+    public void OnSliderValueChanged(float value)
     {
-        Debug.Log($"Adjusting brightness to {BrightnessValue}"); // Debug log
+        AdjustBrightness(value);
+    }
 
-        foreach (SpriteRenderer spriteRenderer in spriteRenderers)
-        {
-            spriteRenderer.color = new Color(BrightnessValue, BrightnessValue, BrightnessValue, spriteRenderer.color.a);
-            Debug.Log($"Updated color of {spriteRenderer.gameObject.name} to {spriteRenderer.color}"); // Debug log
-        }
+    public void OnButtonClick()
+    {
+        // Example: Adjust the brightness to half of the maximum intensity when the button is clicked
+        AdjustBrightness(0.5f);
+    }
+
+    void AdjustBrightness(float brightnessValue)
+    {
+        // Clamp the brightness value between 0 and 1
+        brightnessValue = Mathf.Clamp01(brightnessValue);
+
+        // Adjust the intensity of the main light based on the slider value
+        mainLight.intensity = brightnessValue * maxIntensity;
     }
 }
+
+
+
+
+
 
 
 
