@@ -16,6 +16,7 @@ public class BrightnessCamera : MonoBehaviour
     void Start()
     {
         brightness.TryGetSettings(out exposure);
+        
     }
 
     public void AdjustBrightness(float value)
