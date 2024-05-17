@@ -29867,9 +29867,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e65eadea5bd814d88aea125739a3b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: apple
-  quantity: 2
-  sprite: {fileID: -861781379, guid: 18c8938c64b47254fb6562f85fe6f118, type: 3}
 --- !u!1 &1186610307
 GameObject:
   m_ObjectHideFlags: 0
@@ -31399,9 +31396,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e65eadea5bd814d88aea125739a3b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
-  quantity: 0
-  sprite: {fileID: 0}
 --- !u!1001 &1391291328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31729,7 +31723,6 @@ GameObject:
   - component: {fileID: 1453941204}
   - component: {fileID: 1453941207}
   - component: {fileID: 1453941206}
-  - component: {fileID: 1453941208}
   - component: {fileID: 1453941205}
   m_Layer: 5
   m_Name: Inventory Canvas
@@ -31823,20 +31816,6 @@ Canvas:
   m_SortingLayerID: 980857805
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1453941208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1453941203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 792ebf54148ceec449b1958e44bffbea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InventoryMenu: {fileID: 1826122552}
-  InventoryButton: {fileID: 1202681466}
 --- !u!1001 &1458990459
 PrefabInstance:
   m_ObjectHideFlags: 0
