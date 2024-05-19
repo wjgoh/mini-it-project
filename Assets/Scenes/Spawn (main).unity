@@ -23782,7 +23782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6770128324908464126, guid: f1ad8372ef507e943a3d2df9eddcfe94, type: 3}
       propertyPath: m_SortingLayer
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6770128324908464126, guid: f1ad8372ef507e943a3d2df9eddcfe94, type: 3}
       propertyPath: m_SortingOrder
@@ -25528,7 +25528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.25
-  changeDirectionTime: 2
+  changeDirectionTime: 2.5
 --- !u!61 &1930843681
 BoxCollider2D:
   m_ObjectHideFlags: 0

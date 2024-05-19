@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomMovement : MonoBehaviour
+public class Test_random : MonoBehaviour
 {
+// random npc movement script
     public float moveSpeed = 2f;  // The speed at which the NPC moves
     public float changeDirectionTime = 2f;  // Time between direction changes
 
