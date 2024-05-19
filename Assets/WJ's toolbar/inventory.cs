@@ -2,31 +2,56 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ChangeImageOnSelect : MonoBehaviour, IPointerClickHandler
+
+public class InventorySlot : MonoBehaviour, IPointerClickHandler
 {
-    public Sprite newImage; // The new image to be displayed when selected
+    public Sprite selectedImage; // The image to be displayed when selected
+    public Sprite unselectedImage; // The image to be displayed when unselected
     private Image imageComponent; // Reference to the Image component
+    private static InventorySlot selectedSlot; // Reference to the currently selected slot (static for easy access)
 
     void Start()
     {
-        // Get the Image component attached to the same GameObject
         imageComponent = GetComponent<Image>();
 
-        // Ensure that there is an Image component attached
         if (imageComponent == null)
         {
             Debug.LogError("No Image component found on the GameObject.");
-            enabled = false; // Disable the script
+            enabled = false;
+            return;
         }
+
+        // Set the initial image to unselected
+        imageComponent.sprite = unselectedImage;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        // Check if the left mouse button is clicked
         if (eventData.button == PointerEventData.InputButton.Left)
         {
-            // Change the sprite to the new image
-            imageComponent.sprite = newImage;
+            // If another slot is already selected, deselect it
+            if (selectedSlot != null && selectedSlot != this)
+            {
+                selectedSlot.Deselect();
+            }
+
+            // Select this slot
+            Select();
+        }
+    }
+
+    public void Select()
+    {
+        imageComponent.sprite = selectedImage;
+        selectedSlot = this;
+    }
+
+    public void Deselect()
+    {
+        imageComponent.sprite = unselectedImage;
+        if (selectedSlot == this)
+        {
+            selectedSlot = null;
         }
     }
 }

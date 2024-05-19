@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
     public GameObject InventoryMenu;
     public GameObject InventoryButton;
     private bool menuActivated;
+    public ItemSlot[] itemSlot;
     void Start()
     {
         
@@ -34,7 +35,7 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(string itemName, int quantity, Sprite itemSprite)
     {
-        Debug.Log("itemName = " + itemName + "quantity =" + quantity + "itemSprite =" + itemSprite);
+        
     }
 
 }
