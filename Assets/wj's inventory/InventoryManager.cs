@@ -5,9 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public GameObject InventoryMenu;
-    public GameObject InventoryButton;
     private bool menuActivated;
-    public ItemSlot[] itemSlot;
     void Start()
     {
         
@@ -18,24 +16,18 @@ public class Inventory : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && menuActivated)
         {
+            Time.timeScale = 1;
             InventoryMenu.SetActive(false);
-            InventoryButton.SetActive(true);
             menuActivated = false;
         }
         
         else if(Input.GetKeyDown(KeyCode.E) && !menuActivated)
         {
+            Time.timeScale = 0;
             InventoryMenu.SetActive(true);
-            InventoryButton.SetActive(false);
             menuActivated = true;
         }
         
         
     }
-
-    public void AddItem(string itemName, int quantity, Sprite itemSprite)
-    {
-        
-    }
-
 }
