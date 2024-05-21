@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SettingsScenePage : MonoBehaviour
+public class SettingBACKToMainMenu : MonoBehaviour
 {
   public void LoadScene()
   {

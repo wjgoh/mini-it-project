@@ -8,7 +8,7 @@ public class SettingsMenu : MonoBehaviour
     //Load Scene
     public void Play()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
 
     //Quit Game
@@ -16,5 +16,12 @@ public class SettingsMenu : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("The Player Has Quit The Game");
+    }
+
+    //Settings 
+
+    public void Settings()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

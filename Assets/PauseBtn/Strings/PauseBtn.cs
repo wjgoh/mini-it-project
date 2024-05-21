@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PauseBtn : MonoBehaviour
 {
+    //Pause from spawn 
     public void Pause()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
+
+    
 }

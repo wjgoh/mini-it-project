@@ -10,3 +10,10 @@ public class ToSoundSettings : MonoBehaviour
     SceneManager.LoadScene(3);
   }
 }
+public class ButtonHandler : MonoBehaviour
+{
+    public void OnButtonClick()
+    {
+        Debug.Log("Button clicked!");
+    }
+}
