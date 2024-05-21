@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class Test_random : MonoBehaviour
 {
-// random npc movement script
+// random npc movement script 
     public float moveSpeed = 2f;  // The speed at which the NPC moves
     public float changeDirectionTime = 2f;  // Time between direction changes
 
     private Vector2 movementDirection;  // The direction in which the NPC will move
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(ChangeDirectionRoutine());
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -52,4 +54,5 @@ public class Test_random : MonoBehaviour
             movementDirection = Vector2.right;
         }
     }
+
 }
