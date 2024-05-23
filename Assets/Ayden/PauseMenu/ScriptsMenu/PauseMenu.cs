@@ -22,6 +22,6 @@ public class SettingsMenu : MonoBehaviour
 
     public void Settings()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(4);
     }
 }
