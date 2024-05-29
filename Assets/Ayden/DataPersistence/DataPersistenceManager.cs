@@ -15,7 +15,7 @@ public class DataPersistence : MonoBehaviour
     {
         if (instance !=null)
         {
-            Debug.LogError("Found more than one Data Persistence Manager in the scene")
+            Debug.LogError("Found more than one Data Persistence Manager in the scene");
 
         }
         instance = this;
