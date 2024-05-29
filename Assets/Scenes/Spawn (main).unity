@@ -4600,8 +4600,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1178065231
-  m_SortingLayer: 11
+  m_SortingLayerID: 2144043677
+  m_SortingLayer: 12
   m_SortingOrder: 0
   m_Sprite: {fileID: 1349342690, guid: 371de5727ae59bf4d894a1edb771a78c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4684,8 +4684,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1178065231
-  m_SortingLayer: 11
+  m_SortingLayerID: 2144043677
+  m_SortingLayer: 12
   m_SortingOrder: 0
   m_Sprite: {fileID: 1349342690, guid: 371de5727ae59bf4d894a1edb771a78c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -27835,8 +27835,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1178065231
-  m_SortingLayer: 11
+  m_SortingLayerID: 2144043677
+  m_SortingLayer: 12
   m_SortingOrder: 0
   m_Sprite: {fileID: 1310034106, guid: d2036ba8fc1db7b44a1fda9cedf4c2e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -27967,8 +27967,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1178065231
-  m_SortingLayer: 11
+  m_SortingLayerID: 2144043677
+  m_SortingLayer: 12
   m_SortingOrder: 0
   m_Sprite: {fileID: 1852026625, guid: d2036ba8fc1db7b44a1fda9cedf4c2e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -28859,7 +28859,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1558005333
-  m_SortingLayer: 13
+  m_SortingLayer: 14
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.045131385, y: 0.0032525063, z: 0}
@@ -30619,7 +30619,7 @@ PrefabInstance:
     - target: {fileID: 4128515237443304673, guid: 839702fa7159f1046a204cb058381f80, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1852026625, guid: d2036ba8fc1db7b44a1fda9cedf4c2e0, type: 3}
+      objectReference: {fileID: 21300000, guid: cad40a1022f5ed648ab1bfc01080b342, type: 3}
     - target: {fileID: 8162680391787019690, guid: 839702fa7159f1046a204cb058381f80, type: 3}
       propertyPath: m_Name
       value: ItemSlot
