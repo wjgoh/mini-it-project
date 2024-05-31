@@ -17,7 +17,7 @@ public class QUITbutton : MonoBehaviour
     // Check for the Q key press in the Update method
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown("escape"))
         {
             #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;

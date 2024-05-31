@@ -1,12 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class XcloseToSqawn : MonoBehaviour
+public class SettingsMenuToggle : MonoBehaviour
 {
-  public void LaodScene()
-  {
-    SceneManager.LoadScene(1);
-  }
+    // Reference to the settings menu Canvas
+    public GameObject settingsMenu;
+
+    // Method to toggle the settings menu's active state
+    public void ToggleSettingsMenu()
+    {
+        if (settingsMenu != null)
+        {
+            settingsMenu.SetActive(!settingsMenu.activeSelf);
+        }
+        else
+        {
+            Debug.LogWarning("SettingsMenu is not set.");
+        }
+    }
 }
+
+
+
