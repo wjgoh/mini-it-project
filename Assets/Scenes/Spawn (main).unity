@@ -23780,7 +23780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8983e0f3731cf4ebf042aad7c492d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileName: data.game
+  fileName: data.json
 --- !u!1001 &1511593381
 PrefabInstance:
   m_ObjectHideFlags: 0
