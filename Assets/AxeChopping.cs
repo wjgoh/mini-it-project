@@ -1,37 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AxeChopping : MonoBehaviour
 {
     public Collider2D AxeCollider;
-    Vector2 rightAxeOffset;
+    private Vector2 initialAxePosition;
 
-    private void Start() {
-        rightAxeOffset = transform.position;
+    private enum AxeDirection
+    {
+        Right,
+        Left,
+        Up,
+        Down
     }
 
-    public void AxeRight() {
+    private void Start()
+    {
+        initialAxePosition = transform.localPosition;
+        gameObject.tag = "Axe"; // Set the tag to "Axe"
+        AxeCollider.enabled = false; // Ensure the collider is initially disabled
+    }
+
+    private void SetAxePosition(AxeDirection direction)
+    {
         AxeCollider.enabled = true;
-        transform.localPosition = rightAxeOffset;
+
+        switch (direction)
+        {
+            case AxeDirection.Right:
+                transform.localPosition = initialAxePosition;
+                break;
+            case AxeDirection.Left:
+                transform.localPosition = new Vector3(-initialAxePosition.x, initialAxePosition.y);
+                break;
+            case AxeDirection.Up:
+                transform.localPosition = new Vector3(initialAxePosition.x, initialAxePosition.y);
+                break;
+            case AxeDirection.Down:
+                transform.localPosition = new Vector3(initialAxePosition.x, -initialAxePosition.y);
+                break;
+        }
     }
 
-    public void AxeLeft() {
-        AxeCollider.enabled = true;
-        transform.localPosition = new Vector3(rightAxeOffset.x * -1, rightAxeOffset.y);
-    }
+    public void AxeRight() => SetAxePosition(AxeDirection.Right);
+    public void AxeLeft() => SetAxePosition(AxeDirection.Left);
+    public void AxeUp() => SetAxePosition(AxeDirection.Up);
+    public void AxeDown() => SetAxePosition(AxeDirection.Down);
 
-    public void AxeUp() {
-        AxeCollider.enabled = true;
-        transform.localPosition = new Vector3(rightAxeOffset.x, rightAxeOffset.y * 1);
-    }
-
-    public void AxeDown() {
-        AxeCollider.enabled = true;
-        transform.localPosition = new Vector3(rightAxeOffset.x, rightAxeOffset.y * -1);
-    }
-    
-    public void StopAxe() {
+    public void StopAxe()
+    {
         AxeCollider.enabled = false;
     }
 }

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -25,31 +24,33 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void FixedUpdate(){
-        if(canMove){
-        if (movementInput != Vector2.zero)
+    private void FixedUpdate()
+    {
+        if (canMove)
         {
-            bool success = TryMove(movementInput);
-
-            if (!success)
+            if (movementInput != Vector2.zero)
             {
-                success = TryMove(new Vector2(movementInput.x, 0));
-            }
+                bool success = TryMove(movementInput);
 
-            if (!success)
+                if (!success)
+                {
+                    success = TryMove(new Vector2(movementInput.x, 0));
+                }
+
+                if (!success)
+                {
+                    success = TryMove(new Vector2(0, movementInput.y));
+                }
+
+                SetAnimationParameters(movementInput, success);
+            }
+            else
             {
-                success = TryMove(new Vector2(0, movementInput.y));
+                SetAnimationParameters(Vector2.zero, false);
             }
-
-            SetAnimationParameters(movementInput, success);
-        }
-        else
-        {
-            SetAnimationParameters(Vector2.zero, false);
-        }
         }
     }
-    
+
     private bool TryMove(Vector2 direction)
     {
         if (direction != Vector2.zero)
@@ -92,54 +93,58 @@ public class PlayerController : MonoBehaviour
         }
     }
 
- // play the chopping animation when mouse 1 is pressed
+    // Play the chopping animation and enable axe collider when mouse 1 is pressed
     void OnFire()
     {
         animator.SetTrigger("Chop");
+        HandleAxeChopping();
     }
 
-public void ControlAxeChopping(Vector2 movement, bool moving)
+    public void ControlAxeChopping(Vector2 movement, bool moving)
     {
-    LockMovement();
+        LockMovement();
 
-    SetAnimationParameters(movement, moving);
+        SetAnimationParameters(movement, moving);
 
-    if(moving)
+        if (moving)
+        {
+            if (movement.x > 0)
+            {
+                axeChopping.AxeRight();
+            }
+            else if (movement.x < 0)
+            {
+                axeChopping.AxeLeft();
+            }
+            else if (movement.y > 0)
+            {
+                axeChopping.AxeUp();
+            }
+            else if (movement.y < 0)
+            {
+                axeChopping.AxeDown();
+            }
+        }
+        else
+        {
+            axeChopping.StopAxe();
+        }
+
+        UnlockMovement();
+    }
+
+    public void HandleAxeChopping()
     {
-        if(movement.x > 0)
-        {
-            axeChopping.AxeRight();
-        }
-        else if(movement.x < 0)
-        {
-            axeChopping.AxeLeft();
-        }
-        else if(movement.y > 0)
-        {
-            axeChopping.AxeUp();
-        }
-        else if(movement.y < 0)
-        {
-            axeChopping.AxeDown();
-        }
-    }
-    else
-    {
-        axeChopping.StopAxe();
-    }
-
-    UnlockMovement();
-    }
-
-    public void AxeChopping(){
         ControlAxeChopping(movementInput, movementInput != Vector2.zero);
-    
     }
-        public void LockMovement() {
+
+    private void LockMovement()
+    {
         canMove = false;
     }
 
-    public void UnlockMovement() {
+    private void UnlockMovement()
+    {
         canMove = true;
     }
-}    
+}
