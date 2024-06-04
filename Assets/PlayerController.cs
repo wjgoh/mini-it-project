@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDataPersistence
 {
     public float moveSpeed = 1f;
     public float collisionOffset = 0.05f;
@@ -146,5 +146,17 @@ public class PlayerController : MonoBehaviour
     private void UnlockMovement()
     {
         canMove = true;
+    }
+}
+    // save load feature
+
+    public void LoadData(GameData data)
+    {
+        this.transform.position = data.playerPosition;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.playerPosition = this.transform.position;
     }
 }
