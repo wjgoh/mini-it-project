@@ -2021,7 +2021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6770128324908464126, guid: f1ad8372ef507e943a3d2df9eddcfe94, type: 3}
       propertyPath: m_SortingLayer
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6770128324908464126, guid: f1ad8372ef507e943a3d2df9eddcfe94, type: 3}
       propertyPath: m_SortingOrder
@@ -6874,7 +6874,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.029712439, y: 0.3268373}
+  m_Offset: {x: 0.029712439, y: 0.3434379}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4548686, y: 0.5032525}
@@ -6885,7 +6885,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.4483476, y: 1.2543788}
+  m_Size: {x: 2.4483476, y: 1.28758}
   m_EdgeRadius: 0
 --- !u!95 &1424126269
 Animator:
