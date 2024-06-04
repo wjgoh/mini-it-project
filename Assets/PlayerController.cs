@@ -147,9 +147,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     {
         canMove = true;
     }
-}
     // save load feature
-
     public void LoadData(GameData data)
     {
         this.transform.position = data.playerPosition;
