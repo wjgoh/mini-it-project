@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,39 +7,47 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 1f;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
+    public AxeChopping axeChopping;
 
     Vector2 movementInput;
     Rigidbody2D rb;
+    SpriteRenderer spriteRenderer;
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+
+    bool canMove = true;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
     {
-        if (movementInput != Vector2.zero)
+        if (canMove)
         {
-            bool success = TryMove(movementInput);
-
-            if (!success)
+            if (movementInput != Vector2.zero)
             {
-                success = TryMove(new Vector2(movementInput.x, 0));
-            }
+                bool success = TryMove(movementInput);
 
-            if (!success)
+                if (!success)
+                {
+                    success = TryMove(new Vector2(movementInput.x, 0));
+                }
+
+                if (!success)
+                {
+                    success = TryMove(new Vector2(0, movementInput.y));
+                }
+
+                SetAnimationParameters(movementInput, success);
+            }
+            else
             {
-                success = TryMove(new Vector2(0, movementInput.y));
+                SetAnimationParameters(Vector2.zero, false);
             }
-
-            SetAnimationParameters(movementInput, success);
-        }
-        else
-        {
-            SetAnimationParameters(Vector2.zero, false);
         }
     }
 
@@ -86,9 +93,58 @@ public class PlayerController : MonoBehaviour
         }
     }
 
- // play the chopping animation when mouse 1 is pressed
+    // Play the chopping animation and enable axe collider when mouse 1 is pressed
     void OnFire()
     {
         animator.SetTrigger("Chop");
+        HandleAxeChopping();
+    }
+
+    public void ControlAxeChopping(Vector2 movement, bool moving)
+    {
+        LockMovement();
+
+        SetAnimationParameters(movement, moving);
+
+        if (moving)
+        {
+            if (movement.x > 0)
+            {
+                axeChopping.AxeRight();
+            }
+            else if (movement.x < 0)
+            {
+                axeChopping.AxeLeft();
+            }
+            else if (movement.y > 0)
+            {
+                axeChopping.AxeUp();
+            }
+            else if (movement.y < 0)
+            {
+                axeChopping.AxeDown();
+            }
+        }
+        else
+        {
+            axeChopping.StopAxe();
+        }
+
+        UnlockMovement();
+    }
+
+    public void HandleAxeChopping()
+    {
+        ControlAxeChopping(movementInput, movementInput != Vector2.zero);
+    }
+
+    private void LockMovement()
+    {
+        canMove = false;
+    }
+
+    private void UnlockMovement()
+    {
+        canMove = true;
     }
 }
