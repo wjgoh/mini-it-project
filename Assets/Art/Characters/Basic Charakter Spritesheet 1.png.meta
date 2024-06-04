@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_0
+      name: Basic Charakter Spritesheet 1_0
       rect:
         serializedVersion: 2
         x: 16
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c27dc85bd3672a4b86b6749905fd1c8
-      internalID: 1842275020
+      spriteID: f623fce7d6f6d584eb7ec8232765d490
+      internalID: -1243867174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_1
+      name: Basic Charakter Spritesheet 1_1
       rect:
         serializedVersion: 2
         x: 64
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31186e94e998040478888c0821785e78
-      internalID: -454616392
+      spriteID: 8132ba0305b3a8d47ab4cf2bbf450f7c
+      internalID: -370910888
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_2
+      name: Basic Charakter Spritesheet 1_2
       rect:
         serializedVersion: 2
         x: 112
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b055789724658fb498d072ecbbb672ee
-      internalID: -91974949
+      spriteID: fc9daa771fda473419f4ca5d82e7ab7a
+      internalID: 2125239991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_3
+      name: Basic Charakter Spritesheet 1_3
       rect:
         serializedVersion: 2
         x: 160
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca08f86afd0da0149a81241cf61d5363
-      internalID: 1081118521
+      spriteID: 5682e00cc1d840f41b4b5cc05dfd41e7
+      internalID: -1529649827
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_4
+      name: Basic Charakter Spritesheet 1_4
       rect:
         serializedVersion: 2
         x: 16
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 673cfc585e4232d4186983e43254e4bb
-      internalID: -1686074139
+      spriteID: 4e20a1d469a2ca54da78b2f72b47a92c
+      internalID: -1813257607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_5
+      name: Basic Charakter Spritesheet 1_5
       rect:
         serializedVersion: 2
         x: 64
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5575d1ee6faacbb4e94e668117f5ff4c
-      internalID: 371423312
+      spriteID: ac68615c46ca420489e5c07cb0d41b7d
+      internalID: 1571507445
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_6
+      name: Basic Charakter Spritesheet 1_6
       rect:
         serializedVersion: 2
         x: 112
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a44192f004edaf4796dfc70109abeef
-      internalID: 833973152
+      spriteID: 516928110d54ade47b450fe6c17d1b6b
+      internalID: 857284398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_7
+      name: Basic Charakter Spritesheet 1_7
       rect:
         serializedVersion: 2
         x: 160
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff999eed14a541e46afceb2062507ff9
-      internalID: 2001649946
+      spriteID: 28a7b13fce29c804e8b86d931e72e74d
+      internalID: 111118929
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_8
+      name: Basic Charakter Spritesheet 1_8
       rect:
         serializedVersion: 2
         x: 16
@@ -292,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a50d4920bb9fdb4687be1baab5beeb3
-      internalID: -1967930221
+      spriteID: a2868c4d761ff7c479aa1c9f8d769a31
+      internalID: 369891910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_9
+      name: Basic Charakter Spritesheet 1_9
       rect:
         serializedVersion: 2
         x: 64
@@ -313,14 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 022b3a10bd3ef524691994d38ad24935
-      internalID: 308975421
+      spriteID: 5846d7cd0b26af14dafb40b613e56fad
+      internalID: 476153057
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_10
+      name: Basic Charakter Spritesheet 1_10
       rect:
         serializedVersion: 2
         x: 112
@@ -334,14 +334,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c5762145f143644d91b8c37c280079e
-      internalID: 1075528597
+      spriteID: 841c477649dbdc84d8ca13049eac8e6c
+      internalID: 430415076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_11
+      name: Basic Charakter Spritesheet 1_11
       rect:
         serializedVersion: 2
         x: 160
@@ -355,14 +355,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9e395746d93f1741ac10a370e3d5e23
-      internalID: 1967394874
+      spriteID: b2cde8f1fc734ef4eb9631655831cbe6
+      internalID: -207171005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_12
+      name: Basic Charakter Spritesheet 1_12
       rect:
         serializedVersion: 2
         x: 16
@@ -376,14 +376,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44092ef566757de4bb9503dbdd6ce504
-      internalID: -1366162624
+      spriteID: 728b2cf5de585b648970d0b8a63622c4
+      internalID: 1633419300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_13
+      name: Basic Charakter Spritesheet 1_13
       rect:
         serializedVersion: 2
         x: 64
@@ -397,14 +397,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69c33baba9165d94bb5d8a574ff1d255
-      internalID: -1567315913
+      spriteID: 7ddc716c6c952a44d998b793619e802c
+      internalID: -246390830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_14
+      name: Basic Charakter Spritesheet 1_14
       rect:
         serializedVersion: 2
         x: 112
@@ -418,14 +418,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2335d6424d6e61142827f01ec86da023
-      internalID: -1036330760
+      spriteID: 49f780064af315342b78e37ceadb022b
+      internalID: 1487419204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Charakter Spritesheet_15
+      name: Basic Charakter Spritesheet 1_15
       rect:
         serializedVersion: 2
         x: 160
@@ -439,8 +439,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6fc3e26ba85677428ccf508107c05bf
-      internalID: 1871400788
+      spriteID: 3efe94cfdf2e42b4dacec6c4e182c029
+      internalID: -1578290163
       vertices: []
       indices: 
       edges: []
@@ -456,22 +456,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Basic Charakter Spritesheet_0: 1842275020
-      Basic Charakter Spritesheet_1: -454616392
-      Basic Charakter Spritesheet_10: 1075528597
-      Basic Charakter Spritesheet_11: 1967394874
-      Basic Charakter Spritesheet_12: -1366162624
-      Basic Charakter Spritesheet_13: -1567315913
-      Basic Charakter Spritesheet_14: -1036330760
-      Basic Charakter Spritesheet_15: 1871400788
-      Basic Charakter Spritesheet_2: -91974949
-      Basic Charakter Spritesheet_3: 1081118521
-      Basic Charakter Spritesheet_4: -1686074139
-      Basic Charakter Spritesheet_5: 371423312
-      Basic Charakter Spritesheet_6: 833973152
-      Basic Charakter Spritesheet_7: 2001649946
-      Basic Charakter Spritesheet_8: -1967930221
-      Basic Charakter Spritesheet_9: 308975421
+      Basic Charakter Spritesheet 1_0: -1243867174
+      Basic Charakter Spritesheet 1_1: -370910888
+      Basic Charakter Spritesheet 1_10: 430415076
+      Basic Charakter Spritesheet 1_11: -207171005
+      Basic Charakter Spritesheet 1_12: 1633419300
+      Basic Charakter Spritesheet 1_13: -246390830
+      Basic Charakter Spritesheet 1_14: 1487419204
+      Basic Charakter Spritesheet 1_15: -1578290163
+      Basic Charakter Spritesheet 1_2: 2125239991
+      Basic Charakter Spritesheet 1_3: -1529649827
+      Basic Charakter Spritesheet 1_4: -1813257607
+      Basic Charakter Spritesheet 1_5: 1571507445
+      Basic Charakter Spritesheet 1_6: 857284398
+      Basic Charakter Spritesheet 1_7: 111118929
+      Basic Charakter Spritesheet 1_8: 369891910
+      Basic Charakter Spritesheet 1_9: 476153057
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
