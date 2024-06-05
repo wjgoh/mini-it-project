@@ -7,15 +7,15 @@ TagManager:
   - Animal
   - Axe
   - Tree
+  - item
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
   - Player
-  - Postprocessing
   - Water
   - UI
-  - 
+  - UI
   - 
   - 
   - 
@@ -72,6 +72,9 @@ TagManager:
   - name: Dirt
     uniqueID: 1463190299
     locked: 1
+  - name: bush
+    uniqueID: 1305602337
+    locked: 0
   - name: Grass Design
     uniqueID: 902371933
     locked: 1
@@ -86,6 +89,9 @@ TagManager:
     locked: 1
   - name: Roof
     uniqueID: 2736961963
+    locked: 1
+  - name: Butterfly
+    uniqueID: 924034389
     locked: 1
   - name: UI
     uniqueID: 980857805
