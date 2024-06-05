@@ -85,4 +85,10 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("Vertical", movement.y);
         }
     }
+
+ // play the chopping animation when mouse 1 is pressed
+    void OnFire()
+    {
+        animator.SetTrigger("Chop");
+    }
 }

@@ -4,12 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - item
+  - Animal
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
   - Postprocessing
+  - Player
   - Water
   - UI
   - 
@@ -72,8 +73,11 @@ TagManager:
   - name: Grass Design
     uniqueID: 902371933
     locked: 1
-  - name: Item
-    uniqueID: 1178065231
+  - name: Animals
+    uniqueID: 1086127131
+    locked: 0
+  - name: items
+    uniqueID: 2144043677
     locked: 0
   - name: Player
     uniqueID: 4003319691
