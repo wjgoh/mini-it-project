@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
     public AxeChopping axeChopping;
+    public Hoe hoeDirt;
 
     Vector2 movementInput;
     Rigidbody2D rb;
@@ -98,6 +99,8 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     {
         animator.SetTrigger("Chop");
         HandleAxeChopping();
+        //animator.SetTrigger("Hoe");
+        //HandleHoeDirt();
     }
 
     public void ControlAxeChopping(Vector2 movement, bool moving)
@@ -138,6 +141,44 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         ControlAxeChopping(movementInput, movementInput != Vector2.zero);
     }
 
+    public void ControlHoeDirt(Vector2 movement, bool moving)
+    {
+        LockMovement();
+
+        SetAnimationParameters(movement, moving);
+
+        if (moving)
+        {
+            if (movement.x > 0)
+            {
+                hoeDirt.HoeRight();
+            }
+            else if (movement.x < 0)
+            {
+                hoeDirt.HoeLeft();
+            }
+            else if (movement.y > 0)
+            {
+                hoeDirt.HoeUp();
+            }
+            else if (movement.y < 0)
+            {
+                hoeDirt.HoeDown();
+            }
+        }
+        else
+        {
+            hoeDirt.StopHoe();
+        }
+
+        UnlockMovement();
+    }
+
+    public void HandleHoeDirt()
+    {
+        ControlHoeDirt(movementInput, movementInput != Vector2.zero);
+    }
+    
     private void LockMovement()
     {
         canMove = false;
@@ -147,6 +188,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     {
         canMove = true;
     }
+
     // save load feature
     public void LoadData(GameData data)
     {
