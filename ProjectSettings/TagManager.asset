@@ -5,12 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Animal
+  - Axe
+  - Tree
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Postprocessing
   - Player
+  - Postprocessing
   - Water
   - UI
   - 
