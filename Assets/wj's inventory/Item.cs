@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-   [SerializeField]
+    [SerializeField]
     private string itemName;
 
     [SerializeField] 
@@ -15,27 +15,43 @@ public class Item : MonoBehaviour
     private Sprite sprite;
 
     private InventoryManager inventoryManager;
-    
+    private bool playerInRange;
+
     void Start()
     {
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite);
-            if (leftOverItems <= 0)
-                Destroy(gameObject);
-            else
-                quantity = leftOverItems;
+            playerInRange = true;
         }
     }
 
-    // Update is called once per frame
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            playerInRange = false;
+        }
+    }
+
     void Update()
     {
-        
+        if (playerInRange && Input.GetKeyDown(KeyCode.Q))
+        {
+            CollectItem();
+        }
+    }
+
+    private void CollectItem()
+    {
+        int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite);
+        if (leftOverItems <= 0)
+            Destroy(gameObject);
+        else
+            quantity = leftOverItems;
     }
 }

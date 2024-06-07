@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Animal
+  - item
   layers:
   - Default
   - TransparentFX
@@ -78,6 +79,9 @@ TagManager:
   - name: items
     uniqueID: 2144043677
     locked: 0
+  - name: npc
+    uniqueID: 2582615403
+    locked: 0
   - name: Player
     uniqueID: 4003319691
     locked: 1
@@ -86,4 +90,7 @@ TagManager:
     locked: 1
   - name: UI
     uniqueID: 980857805
+    locked: 0
+  - name: New Layer 17
+    uniqueID: 1399517589
     locked: 0
