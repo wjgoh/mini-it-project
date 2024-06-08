@@ -16,7 +16,7 @@ TagManager:
   - Water
   - UI
   - UI
-  - 
+  - Map
   - 
   - 
   - 
@@ -63,6 +63,9 @@ TagManager:
   - name: above Hill
     uniqueID: 3259117277
     locked: 0
+  - name: ramp wave
+    uniqueID: 3453016733
+    locked: 0
   - name: House
     uniqueID: 3319963641
     locked: 1
@@ -78,9 +81,6 @@ TagManager:
   - name: bush
     uniqueID: 1305602337
     locked: 0
-  - name: Grass Design
-    uniqueID: 902371933
-    locked: 1
   - name: Animals
     uniqueID: 1086127131
     locked: 0
@@ -89,6 +89,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 4003319691
+    locked: 1
+  - name: Grass Design
+    uniqueID: 902371933
     locked: 1
   - name: Roof
     uniqueID: 2736961963
