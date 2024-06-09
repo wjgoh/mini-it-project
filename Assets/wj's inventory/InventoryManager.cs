@@ -34,27 +34,60 @@ public class InventoryManager : MonoBehaviour
 
     public int AddItem(string itemName, int quantity, Sprite itemSprite)
     {
+        int appleCount = 0;
+
+        // First check if the item already exists in the inventory
         for (int i = 0; i < itemSlot.Length; i++)
         {
-            if (itemSlot[i].isFull == false && itemSlot[i].itemName == itemName || itemSlot[i].quantity == 0)
+            if (itemSlot[i].itemName == itemName)
             {
+                appleCount += itemSlot[i].quantity;
+
                 int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemSprite);
                 if (leftOverItems > 0)
-                    leftOverItems = AddItem(itemName, leftOverItems, itemSprite);
+                {
+                    return AddItem(itemName, leftOverItems, itemSprite);
+                }
 
-                return leftOverItems;
+                // Check the apple condition
+                if (itemName == "Apple" && appleCount + quantity == 3)
+                {
+                    Debug.Log("There are now exactly 3 apples in the inventory.");
+                }
+
+                return 0; // All items added successfully
             }
         }
 
-        return quantity;
+        // If the item does not exist, find an empty slot
+        for (int i = 0; i < itemSlot.Length; i++)
+        {
+            if (itemSlot[i].quantity == 0)
+            {
+                int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemSprite);
+                if (leftOverItems > 0)
+                {
+                    return AddItem(itemName, leftOverItems, itemSprite);
+                }
+
+                // Check the apple condition
+                if (itemName == "Apple" && quantity == 3)
+                {
+                    Debug.Log("There are now exactly 3 apples in the inventory.");
+                }
+
+                return 0; // All items added successfully
+            }
+        }
+
+        return quantity; // Inventory is full, return remaining quantity
     }
 
     public void DeselectAllSlots()
     {
         for (int i = 0; i < itemSlot.Length; i++)
         {
-            itemSlot[i].selectedShader.SetActive(false);
-            itemSlot[i].thisItemSelected = false;
+            itemSlot[i].Deselect();
         }
     }
 

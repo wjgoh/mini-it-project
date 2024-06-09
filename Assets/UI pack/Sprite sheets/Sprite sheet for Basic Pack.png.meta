@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -306,6 +306,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Sprite sheet for Basic Pack_10
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 154
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5127592ccfb108840b6a8f5727090f0e
+      internalID: 433671831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -319,6 +340,7 @@ TextureImporter:
     nameFileIdTable:
       Sprite sheet for Basic Pack_0: 1073027953
       Sprite sheet for Basic Pack_1: 114732771
+      Sprite sheet for Basic Pack_10: 433671831
       Sprite sheet for Basic Pack_2: 354736093
       Sprite sheet for Basic Pack_3: 1490995891
       Sprite sheet for Basic Pack_4: 845688825

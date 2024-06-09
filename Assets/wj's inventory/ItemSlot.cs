@@ -17,25 +17,27 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     private int maxNumberOfItems;
 
     // ITEM SLOT
-
     [SerializeField]
     private TMP_Text quantityText;
 
     [SerializeField]
     private Image itemImage;
 
-    public GameObject selectedShader;
+    [SerializeField]
+    private Sprite selectedItemImage; // Image to use when the item is selected
+    private Sprite defaultItemImage;  // Store the default image
+
     public bool thisItemSelected;
     private InventoryManager inventoryManager;
 
     private void Start()
     {
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+        defaultItemImage = itemImage.sprite; // Store the default image
     }
 
     public int AddItem(string itemName, int quantity, Sprite itemSprite)
     {
-        // Check to see if the slot is full
         if (isFull)
             return quantity;
 
@@ -83,13 +85,19 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public void OnLeftClick()
     {
         inventoryManager.DeselectAllSlots();
-        selectedShader.SetActive(true);
         thisItemSelected = true;
+        itemImage.sprite = selectedItemImage; // Change to selected state image
         inventoryManager.ShowSelectedItem(itemSprite);
     }
 
     public void OnRightClick()
     {
         // Add functionality for right click if needed
+    }
+
+    public void Deselect()
+    {
+        thisItemSelected = false;
+        itemImage.sprite = defaultItemImage; // Reset to default state image
     }
 }
