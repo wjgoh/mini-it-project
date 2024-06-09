@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 3379127168348650129}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 177, y: 127.4, z: 0}
-  m_LocalScale: {x: 236.45091, y: 75.501, z: 1}
+  m_LocalPosition: {x: 339, y: 20, z: 0}
+  m_LocalScale: {x: 173.86078, y: 287.73718, z: 1.46}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1438217702096378125}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -975003655
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7700d9cef09c0d14184628151e815890, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89b19fea0f940ed4eae4df6af2889866, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -118,8 +118,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 176.06, y: 126.56002}
-  m_SizeDelta: {x: 223.02, y: 61.83}
+  m_AnchoredPosition: {x: 342.78006, y: 20.359993}
+  m_SizeDelta: {x: 281.02, y: 80.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &230254716703834299
 MeshRenderer:
@@ -160,8 +160,8 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 980857805
-  m_SortingLayer: 15
-  m_SortingOrder: 0
+  m_SortingLayer: 16
+  m_SortingOrder: -20
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &2297173874885277121
 MonoBehaviour:
@@ -281,8 +281,8 @@ Transform:
   m_GameObject: {fileID: 5495140056264999343}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.061000824, y: -0.15499997, z: 0}
-  m_LocalScale: {x: 0.015650809, y: 0.015650809, z: 0.015650809}
+  m_LocalPosition: {x: 0.062, y: -0.193, z: -0}
+  m_LocalScale: {x: 0.23449934, y: 0.23449934, z: 0.23449934}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2168836021640736533}
@@ -326,9 +326,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 980857805
-  m_SortingLayer: 15
+  m_SortingLayer: 16
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c822afdc3c42775498bb0aba9a7eaa02, type: 3}
+  m_Sprite: {fileID: 2134430203, guid: 63bdfdd497c314646a0372e188de5886, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -337,7 +337,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!1 &5955694433167881464
 GameObject:
@@ -373,7 +373,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -1.1299973, y: -0.78999996}
+  m_AnchoredPosition: {x: -1.39, y: -0.65}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7478796275258911735
@@ -385,6 +385,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2168836021640736533}
+  - component: {fileID: 7068186310320106077}
   m_Layer: 0
   m_Name: Dialogue
   m_TagString: Untagged
@@ -400,12 +401,39 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7478796275258911735}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -25.67, y: 3.49, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5374, y: 1.69114, z: 1.5374}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1438217702096378125}
   - {fileID: 5971483682219145570}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7068186310320106077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7478796275258911735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4167dd38cdcf48d4f879bcf902601c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  window: {fileID: 5955694433167881464}
+  indicator: {fileID: 5495140056264999343}
+  dialogueText: {fileID: 2297173874885277121}
+  dialogues:
+  - Hello!
+  - Welcome to Harvest Valley
+  - I'm Alex
+  - I'm the guide of this world!
+  - 'The control for the movement are '
+  - W
+  - A
+  - S
+  - D
+  - Walk to the next npc to continue the tutorial!
+  writingSpeed: 0.03
