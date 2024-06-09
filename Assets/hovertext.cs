@@ -43,8 +43,5 @@ public class HoverText : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 }

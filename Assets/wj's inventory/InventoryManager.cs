@@ -9,12 +9,33 @@ public class InventoryManager : MonoBehaviour
     private bool menuActivated;
     public ItemSlot[] itemSlot;
     public Image selectedItemImage; // Reference to the UI Image for the selected item
+    public Sprite hoeSprite; // Add this line
+    private bool hasGivenHoe = false; // Add this line
 
     void Start()
     {
         selectedItemImage.gameObject.SetActive(false); // Hide the image initially
+
+        // Shadow select the first slot by default
+        if (itemSlot.Length > 0)
+        {
+            itemSlot[0].selectedShader.SetActive(true);
+            if (itemSlot[0].itemSprite != null) // Check if the first slot has an item
+            {
+                ShowSelectedItem(itemSlot[0]
+                    .itemSprite); // Update the selectedItemImage with the sprite of the first slot's item
+            }
+        }
+    }
+    
+    public bool HasGivenHoe()
+    {
+        
+        return hasGivenHoe;
     }
 
+    
+    private bool hasLoggedApple = false;
     // Update is called once per frame
     void Update()
     {
@@ -30,70 +51,92 @@ public class InventoryManager : MonoBehaviour
             InventoryMenu.SetActive(true);
             menuActivated = true;
         }
+
+        // Check for apple quantity
+        foreach (var slot in itemSlot)
+        {
+            if (slot.itemName == "apple" && slot.quantity >= 3)
+            {
+                if (!hasLoggedApple)
+                {
+                    Debug.Log("Apple quantity is 3 or more");
+                    hasLoggedApple = true;
+                }
+                if (!hasGivenHoe)
+                {
+                    AddItem("hoe", 1, hoeSprite); // Assuming the sprite for "hoe" is null
+                    hasGivenHoe = true;
+                }
+
+                break;
+            }
+        } 
+        
+
+
+        // Update the selectedItemImage with the sprite of the first slot's item if it's not active
+        if (itemSlot.Length > 0 && itemSlot[0].itemSprite != null && !selectedItemImage.gameObject.activeSelf)
+        {
+            ShowSelectedItem(itemSlot[0].itemSprite);
+        }
     }
 
     public int AddItem(string itemName, int quantity, Sprite itemSprite)
     {
-        int appleCount = 0;
-
-        // First check if the item already exists in the inventory
         for (int i = 0; i < itemSlot.Length; i++)
         {
-            if (itemSlot[i].itemName == itemName)
-            {
-                appleCount += itemSlot[i].quantity;
-
-                int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemSprite);
-                if (leftOverItems > 0)
-                {
-                    return AddItem(itemName, leftOverItems, itemSprite);
-                }
-
-                // Check the apple condition
-                if (itemName == "Apple" && appleCount + quantity == 3)
-                {
-                    Debug.Log("There are now exactly 3 apples in the inventory.");
-                }
-
-                return 0; // All items added successfully
-            }
-        }
-
-        // If the item does not exist, find an empty slot
-        for (int i = 0; i < itemSlot.Length; i++)
-        {
-            if (itemSlot[i].quantity == 0)
+            if (itemSlot[i].isFull == false && itemSlot[i].itemName == itemName || itemSlot[i].quantity == 0)
             {
                 int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemSprite);
                 if (leftOverItems > 0)
-                {
-                    return AddItem(itemName, leftOverItems, itemSprite);
-                }
+                    leftOverItems = AddItem(itemName, leftOverItems, itemSprite);
 
-                // Check the apple condition
-                if (itemName == "Apple" && quantity == 3)
-                {
-                    Debug.Log("There are now exactly 3 apples in the inventory.");
-                }
-
-                return 0; // All items added successfully
+                return leftOverItems;
             }
         }
 
-        return quantity; // Inventory is full, return remaining quantity
+        return quantity;
     }
 
     public void DeselectAllSlots()
     {
         for (int i = 0; i < itemSlot.Length; i++)
         {
-            itemSlot[i].Deselect();
+            itemSlot[i].selectedShader.SetActive(false);
+            itemSlot[i].thisItemSelected = false;
         }
     }
 
     public void ShowSelectedItem(Sprite itemSprite)
     {
-        selectedItemImage.sprite = itemSprite;
-        selectedItemImage.gameObject.SetActive(true);
+        if (itemSprite == null)
+        {
+            selectedItemImage.sprite = null;
+            selectedItemImage.gameObject.SetActive(false);
+        }
+        else
+        {
+            selectedItemImage.sprite = itemSprite;
+            selectedItemImage.gameObject.SetActive(true);
+        }
     }
-}
+    
+    public void DropItem(ItemSlot itemSlot)
+    {
+        if (itemSlot.quantity > 0)
+        {
+            // Instantiate the item at the player's position
+            var player = GameObject.FindWithTag("Player");
+            var item = Instantiate(Resources.Load<GameObject>("Prefabs/" + itemSlot.itemName), player.transform.position, Quaternion.identity);
+
+            // Decrease the quantity of the item in the inventory
+            itemSlot.quantity--;
+            if (itemSlot.quantity == 0)
+            {
+                itemSlot.itemName = null;
+                itemSlot.itemSprite = null;
+                itemSlot.isFull = false;
+            }
+        }
+    }
+}    
