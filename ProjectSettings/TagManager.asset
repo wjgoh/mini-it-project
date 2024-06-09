@@ -51,11 +51,14 @@ TagManager:
   - name: Grass
     uniqueID: 59985315
     locked: 1
-  - name: Bridge
-    uniqueID: 2634972311
+  - name: Dirt
+    uniqueID: 1463190299
     locked: 1
   - name: Fences
     uniqueID: 3830612745
+    locked: 1
+  - name: Bridge
+    uniqueID: 2634972311
     locked: 1
   - name: Hills
     uniqueID: 3479267331
@@ -75,8 +78,8 @@ TagManager:
   - name: Flower
     uniqueID: 941613449
     locked: 1
-  - name: Dirt
-    uniqueID: 1463190299
+  - name: Player
+    uniqueID: 4003319691
     locked: 1
   - name: bush
     uniqueID: 1305602337
@@ -87,9 +90,6 @@ TagManager:
   - name: items
     uniqueID: 2144043677
     locked: 0
-  - name: Player
-    uniqueID: 4003319691
-    locked: 1
   - name: Grass Design
     uniqueID: 902371933
     locked: 1
