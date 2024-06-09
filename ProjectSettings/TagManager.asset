@@ -78,11 +78,11 @@ TagManager:
   - name: Flower
     uniqueID: 941613449
     locked: 1
-  - name: Fences
-    uniqueID: 3830612745
-    locked: 1
   - name: Player
     uniqueID: 4003319691
+    locked: 1
+  - name: Fences
+    uniqueID: 3830612745
     locked: 1
   - name: bush
     uniqueID: 1305602337
