@@ -14,7 +14,7 @@ public class taskanimationscript : MonoBehaviour
 
     }
 
-    // Update is called once per fram
+    // Update is called once per frame
     void Update()
     {
         int appleCount = 0;
