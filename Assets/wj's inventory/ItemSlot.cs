@@ -27,6 +27,11 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public GameObject selectedShader;
     public bool thisItemSelected;
     private InventoryManager inventoryManager;
+    
+    private void Awake()
+    {
+        inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+    }
 
     private void Start()
     {
@@ -66,7 +71,13 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
         return 0;
     }
-
+    void Update()
+    {
+        if (thisItemSelected && Input.GetKeyDown(KeyCode.Z))
+        {
+            inventoryManager.DropItem(this);
+        }
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)
@@ -85,7 +96,14 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         inventoryManager.DeselectAllSlots();
         selectedShader.SetActive(true);
         thisItemSelected = true;
-        inventoryManager.ShowSelectedItem(itemSprite);
+        if (itemSprite == null)
+        {
+            inventoryManager.ShowSelectedItem(null);
+        }
+        else
+        {
+            inventoryManager.ShowSelectedItem(itemSprite);
+        }
     }
 
     public void OnRightClick()
