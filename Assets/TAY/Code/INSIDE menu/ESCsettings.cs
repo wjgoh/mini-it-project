@@ -2,21 +2,22 @@ using UnityEngine;
 
 public class ShowGameObjectOnKeyPress : MonoBehaviour
 {
-    public GameObject targetObject; // Reference to the GameObject to show
+    public GameObject targetObject; // Reference to the GameObject to show/hide
 
     void Update()
     {
-        if (Input.GetKeyDown("escape"))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ShowTargetObject();
+            ToggleTargetObject();
         }
     }
 
-    void ShowTargetObject()
+    void ToggleTargetObject()
     {
         if (targetObject != null)
         {
-            targetObject.SetActive(true);
+            bool isActive = targetObject.activeSelf;
+            targetObject.SetActive(!isActive);
         }
         else
         {
