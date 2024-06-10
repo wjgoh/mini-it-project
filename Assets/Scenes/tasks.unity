@@ -4452,13 +4452,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1706631255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60adf8af0ae753e429ba2c45727df44d, type: 3}
+  m_Script: {fileID: 11500000, guid: 0556e95302837ba4c824a39f9d317e0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1415880583}
-  defaultSprite: {fileID: -860594606, guid: 8cd6c357270eaf848945baff2847fc6f, type: 3}
-  hoverSprite: {fileID: -1091859102, guid: 8cd6c357270eaf848945baff2847fc6f, type: 3}
-  spriteRenderer: {fileID: 0}
+  defaultSprite: {fileID: 839520081, guid: 8cd6c357270eaf848945baff2847fc6f, type: 3}
+  hoverSprite: {fileID: -513217236, guid: 8cd6c357270eaf848945baff2847fc6f, type: 3}
 --- !u!61 &1706631258
 BoxCollider2D:
   m_ObjectHideFlags: 0
