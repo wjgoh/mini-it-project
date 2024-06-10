@@ -9,33 +9,12 @@ public class InventoryManager : MonoBehaviour
     private bool menuActivated;
     public ItemSlot[] itemSlot;
     public Image selectedItemImage; // Reference to the UI Image for the selected item
-    public Sprite hoeSprite; // Add this line
-    private bool hasGivenHoe = false; // Add this line
 
     void Start()
     {
         selectedItemImage.gameObject.SetActive(false); // Hide the image initially
-
-        // Shadow select the first slot by default
-        if (itemSlot.Length > 0)
-        {
-            itemSlot[0].selectedShader.SetActive(true);
-            if (itemSlot[0].itemSprite != null) // Check if the first slot has an item
-            {
-                ShowSelectedItem(itemSlot[0]
-                    .itemSprite); // Update the selectedItemImage with the sprite of the first slot's item
-            }
-        }
-    }
-    
-    public bool HasGivenHoe()
-    {
-        
-        return hasGivenHoe;
     }
 
-    
-    private bool hasLoggedApple = false;
     // Update is called once per frame
     void Update()
     {
@@ -50,34 +29,6 @@ public class InventoryManager : MonoBehaviour
             Time.timeScale = 0;
             InventoryMenu.SetActive(true);
             menuActivated = true;
-        }
-
-        // Check for apple quantity
-        foreach (var slot in itemSlot)
-        {
-            if (slot.itemName == "apple" && slot.quantity >= 3)
-            {
-                if (!hasLoggedApple)
-                {
-                    Debug.Log("Apple quantity is 3 or more");
-                    hasLoggedApple = true;
-                }
-                if (!hasGivenHoe)
-                {
-                    AddItem("hoe", 1, hoeSprite); // Assuming the sprite for "hoe" is null
-                    hasGivenHoe = true;
-                }
-
-                break;
-            }
-        } 
-        
-
-
-        // Update the selectedItemImage with the sprite of the first slot's item if it's not active
-        if (itemSlot.Length > 0 && itemSlot[0].itemSprite != null && !selectedItemImage.gameObject.activeSelf)
-        {
-            ShowSelectedItem(itemSlot[0].itemSprite);
         }
     }
 
@@ -109,34 +60,7 @@ public class InventoryManager : MonoBehaviour
 
     public void ShowSelectedItem(Sprite itemSprite)
     {
-        if (itemSprite == null)
-        {
-            selectedItemImage.sprite = null;
-            selectedItemImage.gameObject.SetActive(false);
-        }
-        else
-        {
-            selectedItemImage.sprite = itemSprite;
-            selectedItemImage.gameObject.SetActive(true);
-        }
+        selectedItemImage.sprite = itemSprite;
+        selectedItemImage.gameObject.SetActive(true);
     }
-    
-    public void DropItem(ItemSlot itemSlot)
-    {
-        if (itemSlot.quantity > 0)
-        {
-            // Instantiate the item at the player's position
-            var player = GameObject.FindWithTag("Player");
-            var item = Instantiate(Resources.Load<GameObject>("Prefabs/" + itemSlot.itemName), player.transform.position, Quaternion.identity);
-
-            // Decrease the quantity of the item in the inventory
-            itemSlot.quantity--;
-            if (itemSlot.quantity == 0)
-            {
-                itemSlot.itemName = null;
-                itemSlot.itemSprite = null;
-                itemSlot.isFull = false;
-            }
-        }
-    }
-}    
+}
