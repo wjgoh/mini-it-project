@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class GameData 
 {
-    public int deathCount;
-
     public Vector3 playerPosition;
 
     //the values defined in this constructor will be the default values
@@ -15,7 +13,6 @@ public class GameData
 
     public GameData()
     {
-        this.deathCount = 0;
         playerPosition = Vector3.zero;
     }
 }
