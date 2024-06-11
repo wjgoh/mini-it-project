@@ -117,8 +117,8 @@ TextureImporter:
         y: 64
         width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.4548686, y: 0.5032525}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -138,8 +138,8 @@ TextureImporter:
         y: 64
         width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.4548686, y: 0.5032525}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: Wooden House_2
       rect:
         serializedVersion: 2
-        x: 65
+        x: 64
         y: 64
-        width: 15
+        width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.4548686, y: 0.5032525}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -222,8 +222,8 @@ TextureImporter:
         y: 48
         width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.4493761, y: 0.5094826}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,12 +260,12 @@ TextureImporter:
       name: Wooden House_7
       rect:
         serializedVersion: 2
-        x: 31
+        x: 32
         y: 48
-        width: 16
+        width: 15
         height: 16
-      alignment: 9
-      pivot: {x: 0.5315809, y: 0.5045116}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -283,10 +283,10 @@ TextureImporter:
         serializedVersion: 2
         x: 48
         y: 48
-        width: 17
+        width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.4548686, y: 0.5032525}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -302,12 +302,12 @@ TextureImporter:
       name: Wooden House_9
       rect:
         serializedVersion: 2
-        x: 65
+        x: 64
         y: 48
-        width: 15
+        width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.4548686, y: 0.5032525}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -366,11 +366,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 31
+        y: 32
         width: 16
-        height: 17
-      alignment: 9
-      pivot: {x: 0.4548686, y: 0.5032525}
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -390,8 +390,8 @@ TextureImporter:
         y: 32
         width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.4548686, y: 0.5032525}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -430,10 +430,10 @@ TextureImporter:
         serializedVersion: 2
         x: 48
         y: 32
-        width: 17
+        width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.4548686, y: 0.5032525}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -449,12 +449,12 @@ TextureImporter:
       name: Wooden House_16
       rect:
         serializedVersion: 2
-        x: 65
+        x: 64
         y: 32
-        width: 15
+        width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.4548686, y: 0.5032525}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -513,11 +513,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 17
+        y: 16
         width: 16
-        height: 15
-      alignment: 9
-      pivot: {x: 0.4548686, y: 0.5032525}
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -533,12 +533,12 @@ TextureImporter:
       name: Wooden House_20
       rect:
         serializedVersion: 2
-        x: 15
+        x: 16
         y: 16
-        width: 18
+        width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.4548686, y: 0.5032525}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -577,10 +577,10 @@ TextureImporter:
         serializedVersion: 2
         x: 48
         y: 16
-        width: 17
+        width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.4548686, y: 0.5032525}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -596,12 +596,12 @@ TextureImporter:
       name: Wooden House_23
       rect:
         serializedVersion: 2
-        x: 65
+        x: 64
         y: 16
-        width: 15
+        width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.4548686, y: 0.5032525}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -662,9 +662,9 @@ TextureImporter:
         x: 0
         y: 0
         width: 16
-        height: 15
-      alignment: 9
-      pivot: {x: 0.49074647, y: 0.47840875}
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -684,8 +684,8 @@ TextureImporter:
         y: 0
         width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.4548686, y: 0.5032525}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
