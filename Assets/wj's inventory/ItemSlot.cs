@@ -16,11 +16,12 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     [SerializeField]
     private int maxNumberOfItems;
 
-    // ITEM SLOT
+    // Add a new field for tool type
+    public ToolType toolType;
 
+    // ITEM SLOT
     [SerializeField]
     private TMP_Text quantityText;
-
     [SerializeField]
     private Image itemImage;
 
@@ -80,13 +81,17 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void OnLeftClick()
-    {
-        inventoryManager.DeselectAllSlots();
-        selectedShader.SetActive(true);
-        thisItemSelected = true;
-        inventoryManager.ShowSelectedItem(itemSprite);
-    }
+public void OnLeftClick()
+{
+    inventoryManager.DeselectAllSlots();
+    selectedShader.SetActive(true);
+    thisItemSelected = true;
+    inventoryManager.ShowSelectedItem(itemSprite);
+
+    // Notify the PlayerController about the selected tool
+    PlayerController playerController = FindObjectOfType<PlayerController>();
+    playerController.SetCurrentTool(toolType);
+}
 
     public void OnRightClick()
     {

@@ -15,8 +15,9 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     SpriteRenderer spriteRenderer;
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
-
     bool canMove = true;
+    private ToolType currentTool = ToolType.None; // The current selected tool
+
 
     void Start()
     {
@@ -97,16 +98,21 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     // Play the chopping animation and enable axe collider when mouse 1 is pressed
     void OnFire()
     {
-        animator.SetTrigger("Chop");
-        HandleAxeChopping();
-        //animator.SetTrigger("Hoe");
-        //HandleHoeDirt();
+        if (currentTool == ToolType.Axe)
+        {
+            animator.SetTrigger("Chop");
+            HandleAxeChopping();
+        }
+        else if (currentTool == ToolType.Hoe)
+        {
+            animator.SetTrigger("Hoe");
+            HandleHoeDirt();
+        }
     }
 
     public void ControlAxeChopping(Vector2 movement, bool moving)
     {
         LockMovement();
-
         SetAnimationParameters(movement, moving);
 
         if (moving)
@@ -136,15 +142,9 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         UnlockMovement();
     }
 
-    public void HandleAxeChopping()
-    {
-        ControlAxeChopping(movementInput, movementInput != Vector2.zero);
-    }
-
     public void ControlHoeDirt(Vector2 movement, bool moving)
     {
         LockMovement();
-
         SetAnimationParameters(movement, moving);
 
         if (moving)
@@ -174,11 +174,16 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         UnlockMovement();
     }
 
+    public void HandleAxeChopping()
+    {
+        ControlAxeChopping(movementInput, movementInput != Vector2.zero);
+    }
+
     public void HandleHoeDirt()
     {
         ControlHoeDirt(movementInput, movementInput != Vector2.zero);
     }
-    
+
     private void LockMovement()
     {
         canMove = false;
@@ -189,7 +194,13 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         canMove = true;
     }
 
-    // save load feature
+    public void SetCurrentTool(ToolType toolType)
+    {
+        currentTool = toolType;
+    }
+
+
+    // Save/load feature
     public void LoadData(GameData data)
     {
         this.transform.position = data.playerPosition;
@@ -199,4 +210,11 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     {
         data.playerPosition = this.transform.position;
     }
+}
+
+public enum ToolType
+{
+    None,
+    Axe,
+    Hoe
 }
