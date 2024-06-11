@@ -9,8 +9,8 @@ public class InventoryManager : MonoBehaviour
     private bool menuActivated;
     public ItemSlot[] itemSlot;
     public Image selectedItemImage; // Reference to the UI Image for the selected item
-    public Sprite hoeSprite; // Add this line
-    private bool hasGivenHoe = false; // Add this line
+    public Sprite axeSprite; // Add this line
+    private bool hasGivenAxe = false; // Add this line
 
     void Start()
     {
@@ -28,10 +28,10 @@ public class InventoryManager : MonoBehaviour
         }
     }
     
-    public bool HasGivenHoe()
+    public bool HasGivenAxe()
     {
-        
-        return hasGivenHoe;
+
+        return hasGivenAxe;
     }
 
     
@@ -62,10 +62,10 @@ public class InventoryManager : MonoBehaviour
                     Debug.Log("Apple quantity is 3 or more");
                     hasLoggedApple = true;
                 }
-                if (!hasGivenHoe)
+                if (!hasGivenAxe)
                 {
-                    AddItem("hoe", 1, hoeSprite); // Assuming the sprite for "hoe" is null
-                    hasGivenHoe = true;
+                    AddItem("axe", 1, axeSprite); 
+                    hasGivenAxe = true;
                 }
 
                 break;
