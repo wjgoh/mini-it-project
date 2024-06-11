@@ -86,6 +86,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         selectedShader.SetActive(true);
         thisItemSelected = true;
         inventoryManager.ShowSelectedItem(itemSprite);
+        Debug.Log("Selected item: " + itemName);
     }
 
     public void OnRightClick()
