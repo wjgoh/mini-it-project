@@ -11,21 +11,22 @@ public class InventoryManager : MonoBehaviour
     public Image selectedItemImage; // Reference to the UI Image for the selected item
     public Sprite axeSprite; // Add this line
     private bool hasGivenAxe = false; // Add this line
-
+    public Sprite blankSprite;
+    
     void Start()
     {
         selectedItemImage.gameObject.SetActive(false); // Hide the image initially
 
-        // Shadow select the first slot by default
-        if (itemSlot.Length > 0)
-        {
-            itemSlot[0].selectedShader.SetActive(true);
-            if (itemSlot[0].itemSprite != null) // Check if the first slot has an item
-            {
-                ShowSelectedItem(itemSlot[0]
-                    .itemSprite); // Update the selectedItemImage with the sprite of the first slot's item
-            }
-        }
+        // Comment out or remove the following lines
+        // if (itemSlot.Length > 0)
+        // {
+        //     itemSlot[0].selectedShader.SetActive(true);
+        //     if (itemSlot[0].itemSprite != null) // Check if the first slot has an item
+        //     {
+        //         ShowSelectedItem(itemSlot[0]
+        //             .itemSprite); // Update the selectedItemImage with the sprite of the first slot's item
+        //     }
+        // }
     }
     
     public bool HasGivenAxe()
@@ -71,14 +72,6 @@ public class InventoryManager : MonoBehaviour
                 break;
             }
         } 
-        
-
-
-        // Update the selectedItemImage with the sprite of the first slot's item if it's not active
-        if (itemSlot.Length > 0 && itemSlot[0].itemSprite != null && !selectedItemImage.gameObject.activeSelf)
-        {
-            ShowSelectedItem(itemSlot[0].itemSprite);
-        }
     }
 
     public int AddItem(string itemName, int quantity, Sprite itemSprite)
@@ -111,8 +104,8 @@ public class InventoryManager : MonoBehaviour
     {
         if (itemSprite == null)
         {
-            selectedItemImage.sprite = null;
-            selectedItemImage.gameObject.SetActive(false);
+            selectedItemImage.sprite = blankSprite; // Set to blank sprite
+            selectedItemImage.gameObject.SetActive(true); // Keep the image active
         }
         else
         {
