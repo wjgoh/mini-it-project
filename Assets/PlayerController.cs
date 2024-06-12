@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     public ContactFilter2D movementFilter;
     public AxeChopping axeChopping;
     public Hoe hoeDirt;
+    public Watering watering;
 
     Vector2 movementInput;
     Rigidbody2D rb;
@@ -108,11 +109,17 @@ public class PlayerController : MonoBehaviour, IDataPersistence
             animator.SetTrigger("Hoe");
             HandleHoeDirt();
         }
+        else if (currentTool == ToolType.Watering)
+        {
+            animator.SetTrigger("Water");
+            HandleWatering();
+        }
     }
 
     public void ControlAxeChopping(Vector2 movement, bool moving)
     {
         LockMovement();
+
         SetAnimationParameters(movement, moving);
 
         if (moving)
@@ -145,6 +152,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     public void ControlHoeDirt(Vector2 movement, bool moving)
     {
         LockMovement();
+
         SetAnimationParameters(movement, moving);
 
         if (moving)
@@ -174,6 +182,39 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         UnlockMovement();
     }
 
+    public void ControlWatering(Vector2 movement, bool moving)
+    {
+        LockMovement();
+
+        SetAnimationParameters(movement, moving);
+
+        if (moving)
+        {
+            if (movement.x > 0)
+            {
+                watering.WateringRight();
+            }
+            else if (movement.x < 0)
+            {
+                watering.WateringLeft();
+            }
+            else if (movement.y > 0)
+            {
+                watering.WateringUp();
+            }
+            else if (movement.y < 0)
+            {
+                watering.WateringDown();
+            }
+        }
+        else
+        {
+            watering.StopWatering();
+        }
+
+        UnlockMovement();
+    }
+
     public void HandleAxeChopping()
     {
         ControlAxeChopping(movementInput, movementInput != Vector2.zero);
@@ -182,6 +223,11 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     public void HandleHoeDirt()
     {
         ControlHoeDirt(movementInput, movementInput != Vector2.zero);
+    }
+
+    public void HandleWatering()
+    {
+        ControlWatering(movementInput, movementInput != Vector2.zero);
     }
 
     private void LockMovement()
@@ -194,11 +240,10 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         canMove = true;
     }
 
-    public void SetCurrentTool(ToolType toolType)
+    public void SetCurrentTool(ToolType tool)
     {
-        currentTool = toolType;
+        currentTool = tool;
     }
-
 
     // Save/load feature
     public void LoadData(GameData data)
@@ -216,5 +261,6 @@ public enum ToolType
 {
     None,
     Axe,
-    Hoe
+    Hoe,
+    Watering
 }
