@@ -2,9 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
-public class Item : MonoBehaviour
+public class Item : MonoBehaviour, IDataPersistence
 {
+    [SerializeField] private string id;
+
+    [ContextMenu("Generate guid for id")]
+
+
+    private void GenerateGuid()
+    {
+        id = System.Guid.NewGuid().ToString();
+    }
+
     [SerializeField]
     private string itemName;
 
@@ -53,5 +64,24 @@ public class Item : MonoBehaviour
             Destroy(gameObject);
         else
             quantity = leftOverItems;
+    }
+
+    public void LoadData(GameData data)
+    {
+        data.itemsCollected.TryGetValue(id, out playerInRange );
+        if (playerInRange)
+        {
+            visual.gameObject.SetActive(false);
+        }
+
+    }
+
+    private void SaveData(ref GameData data)
+    {
+        if (data.itemsCollected.ContainsKey(id))
+        {
+            data.itemsCollected.Remove(id);
+        }
+        data.itemsCollected.Add(id, playerInRange);
     }
 }
