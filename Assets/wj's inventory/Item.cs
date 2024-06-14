@@ -71,7 +71,7 @@ public class Item : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data)
     {
-        data.itemsCollected.TryGetValue(id, out playerInRange);
+        data.itemsCollected.TryGetValue(id, out Collect);
         if (playerInRange)
         {
             Destroy(gameObject);
