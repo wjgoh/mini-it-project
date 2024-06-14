@@ -74,8 +74,9 @@ public class Item : MonoBehaviour, IDataPersistence
         data.itemsCollected.TryGetValue(id, out playerInRange);
         if (playerInRange)
         {
-            object value = visual.gameObject.SetActive(false);
+            Destroy(gameObject);
         }
+        
 
     }
 
