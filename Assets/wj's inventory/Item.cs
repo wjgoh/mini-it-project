@@ -26,7 +26,10 @@ public class Item : MonoBehaviour, IDataPersistence
     private Sprite sprite;
 
     private InventoryManager inventoryManager;
+
     private bool playerInRange;
+
+    public object visual { get; private set; }
 
     void Start()
     {
@@ -68,15 +71,15 @@ public class Item : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data)
     {
-        data.itemsCollected.TryGetValue(id, out playerInRange );
+        data.itemsCollected.TryGetValue(id, out playerInRange);
         if (playerInRange)
         {
-            visual.gameObject.SetActive(false);
+            object value = visual.gameObject.SetActive(false);
         }
 
     }
 
-    private void SaveData(ref GameData data)
+    public void SaveData(ref GameData data)
     {
         if (data.itemsCollected.ContainsKey(id))
         {
