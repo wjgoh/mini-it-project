@@ -177,23 +177,23 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data)
     {
+        ClearInventory();
+
         foreach (var itemData in data.inventoryItems)
         {
             Sprite itemSprite = GetSpriteForItem(itemData.spriteName);
-            AddItem(itemData.itemName, itemData.quantity, itemSprite);
-
-            if (itemSprite == null)
+            for (int i = 0; i < itemSlot.Length; i++)
             {
-                selectedItemImage.sprite = blankSprite; // Set to blank sprite
-                selectedItemImage.gameObject.SetActive(true); // Keep the image active
-            }
-            else
-            {
-                selectedItemImage.sprite = itemSprite;
-                selectedItemImage.gameObject.SetActive(true);
+                if (itemSlot[i].quantity == 0)
+                {
+                    itemSlot[i].AddItem(itemData.itemName, itemData.quantity, itemSprite);
+                    break;
+                }
             }
         }
     }
+
+
 
     private Sprite GetSpriteForItem(string spriteName)
     {
