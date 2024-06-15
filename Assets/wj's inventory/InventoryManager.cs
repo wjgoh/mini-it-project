@@ -167,7 +167,7 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
                 InventoryItemData itemData = new InventoryItemData
                 {
                     itemName = slot.itemName,
-                    quantity = slot.quantity,
+                    quantity = slot.quantity, 
                     spriteName = slot.itemSprite.name
                 };
                 data.inventoryItems.Add(itemData);
@@ -181,6 +181,17 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
         {
             Sprite itemSprite = GetSpriteForItem(itemData.spriteName);
             AddItem(itemData.itemName, itemData.quantity, itemSprite);
+
+            if (itemSprite == null)
+            {
+                selectedItemImage.sprite = blankSprite; // Set to blank sprite
+                selectedItemImage.gameObject.SetActive(true); // Keep the image active
+            }
+            else
+            {
+                selectedItemImage.sprite = itemSprite;
+                selectedItemImage.gameObject.SetActive(true);
+            }
         }
     }
 
