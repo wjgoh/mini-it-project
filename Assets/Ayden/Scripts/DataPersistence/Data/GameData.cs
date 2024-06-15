@@ -7,13 +7,11 @@ using UnityEngine;
 
 public class GameData 
 {
+    public Dictionary<string,bool> itemsCollected = new Dictionary<string,bool>();
     public Vector3 playerPosition;
-
-    public Dictionary<string, bool> itemsCollected;
 
     public GameData()
     {
         playerPosition = Vector3.zero;
-        itemsCollected = new Dictionary<string, bool>();   
     }
 }

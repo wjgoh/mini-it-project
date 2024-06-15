@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -12,32 +13,20 @@ public class InventoryManager : MonoBehaviour
     public Sprite axeSprite; // Add this line
     private bool hasGivenAxe = false; // Add this line
     public Sprite blankSprite;
-    
+
     void Start()
     {
         selectedItemImage.gameObject.SetActive(false); // Hide the image initially
-
-        // Comment out or remove the following lines
-        // if (itemSlot.Length > 0)
-        // {
-        //     itemSlot[0].selectedShader.SetActive(true);
-        //     if (itemSlot[0].itemSprite != null) // Check if the first slot has an item
-        //     {
-        //         ShowSelectedItem(itemSlot[0]
-        //             .itemSprite); // Update the selectedItemImage with the sprite of the first slot's item
-        //     }
-        // }
+        LoadInventory(); // Load the inventory at the start
     }
-    
+
     public bool HasGivenAxe()
     {
-
         return hasGivenAxe;
     }
 
-    
     private bool hasLoggedApple = false;
-    // Update is called once per frame
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && menuActivated)
@@ -45,6 +34,7 @@ public class InventoryManager : MonoBehaviour
             Time.timeScale = 1;
             InventoryMenu.SetActive(false);
             menuActivated = false;
+            SaveInventory(); // Save the inventory when the menu is closed
         }
         else if (Input.GetKeyDown(KeyCode.E) && !menuActivated)
         {
@@ -65,13 +55,13 @@ public class InventoryManager : MonoBehaviour
                 }
                 if (!hasGivenAxe)
                 {
-                    AddItem("axe", 1, axeSprite); 
+                    AddItem("axe", 1, axeSprite);
                     hasGivenAxe = true;
                 }
 
                 break;
             }
-        } 
+        }
     }
 
     public int AddItem(string itemName, int quantity, Sprite itemSprite)
@@ -113,7 +103,7 @@ public class InventoryManager : MonoBehaviour
             selectedItemImage.gameObject.SetActive(true);
         }
     }
-    
+
     public void DropItem(ItemSlot itemSlot)
     {
         if (itemSlot.quantity > 0)
@@ -132,4 +122,73 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
-}    
+
+    // Save Load Feature
+
+    public void SaveInventory()
+    {
+        InventoryData inventoryData = new InventoryData();
+        foreach (var slot in itemSlot)
+        {
+            if (slot.quantity > 0)
+            {
+                ItemData itemData = new ItemData
+                {
+                    itemName = slot.itemName,
+                    quantity = slot.quantity
+                };
+                inventoryData.items.Add(itemData);
+            }
+        }
+        string json = JsonUtility.ToJson(inventoryData);
+        File.WriteAllText(Path.Combine(Application.persistentDataPath, "inventory.json"), json);
+        Debug.Log("Inventory saved.");
+    }
+
+    public void LoadInventory()
+    {
+        string path = Path.Combine(Application.persistentDataPath, "inventory.json");
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            InventoryData inventoryData = JsonUtility.FromJson<InventoryData>(json);
+
+            foreach (var itemData in inventoryData.items)
+            {
+                Sprite itemSprite = GetSpriteForItem(itemData.itemName); // Implement this method to get the correct sprite
+                AddItem(itemData.itemName, itemData.quantity, itemSprite);
+            }
+
+            Debug.Log("Inventory loaded.");
+        }
+        else
+        {
+            Debug.Log("No save file found.");
+        }
+    }
+
+    private Sprite GetSpriteForItem(string itemName)
+    {
+        // Implement logic to return the correct sprite for the item name
+        if (itemName == "axe")
+        {
+            return axeSprite;
+        }
+
+        // Add additional conditions for other item sprites
+        return blankSprite; // Return a default sprite if no match is found
+    }
+}
+
+[System.Serializable]
+public class InventoryData
+{
+    public List<ItemData> items = new List<ItemData>();
+}
+
+[System.Serializable]
+public class ItemData
+{
+    public string itemName;
+    public int quantity;
+}

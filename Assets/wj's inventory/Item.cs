@@ -2,34 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.VFX;
 
 public class Item : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private string id;
 
     [ContextMenu("Generate guid for id")]
-
-
     private void GenerateGuid()
     {
-        id = System.Guid.NewGuid().ToString();
+        id = Guid.NewGuid().ToString();
     }
 
-    [SerializeField]
-    private string itemName;
-
-    [SerializeField] 
-    private int quantity;
-
-    [SerializeField] 
-    private Sprite sprite;
+    [SerializeField] private string itemName;
+    [SerializeField] private int quantity;
+    [SerializeField] private Sprite sprite;
 
     private InventoryManager inventoryManager;
-
     private bool playerInRange;
-
-    public object visual { get; private set; }
 
     void Start()
     {
@@ -71,21 +60,21 @@ public class Item : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data)
     {
-        data.itemsCollected.TryGetValue(id, out Collect);
-        if (playerInRange)
+        if (data.itemsCollected.TryGetValue(id, out bool isCollected) && isCollected)
         {
             Destroy(gameObject);
         }
-        
-
     }
 
     public void SaveData(ref GameData data)
     {
         if (data.itemsCollected.ContainsKey(id))
         {
-            data.itemsCollected.Remove(id);
+            data.itemsCollected[id] = playerInRange && Input.GetKeyDown(KeyCode.F);
         }
-        data.itemsCollected.Add(id, playerInRange);
+        else
+        {
+            data.itemsCollected.Add(id, playerInRange && Input.GetKeyDown(KeyCode.F));
+        }
     }
 }
