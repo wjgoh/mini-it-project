@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -71,8 +72,29 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
 
                 break;
             }
-        } 
+        }
+        // Clear inventory on 'K' key press
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            ClearInventory();
+        }
     }
+
+
+    public void ClearInventory()
+    {
+        foreach (var slot in itemSlot)
+        {
+            slot.itemName = null;
+            slot.itemSprite = null;
+            slot.quantity = 0;
+            slot.isFull = false;
+        }
+        // Deselect all slots and update UI (if needed)
+        DeselectAllSlots();
+        ShowSelectedItem(null); // Clear selected item image or hide it
+    
+     }
 
     public int AddItem(string itemName, int quantity, Sprite itemSprite)
     {
