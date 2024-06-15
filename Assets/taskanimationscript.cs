@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,16 +24,19 @@ public class taskanimationscript : MonoBehaviour
         // Check the quantity of apples and hoes in the inventory
         foreach (var slot in inventoryManager.itemSlot)
         {
-            if (slot.itemName == "apple")
+            if (slot.itemName != null)
             {
-                appleCount += slot.quantity;
-            }
-            else if (slot.itemName == "hoe")
-            {
-                hoeCount += slot.quantity;
+                if (string.Equals(slot.itemName.Trim(), "apple", StringComparison.OrdinalIgnoreCase))
+                {
+                    appleCount += slot.quantity;
+                }
+                else if (string.Equals(slot.itemName.Trim(), "hoe", StringComparison.OrdinalIgnoreCase))
+                {
+                    hoeCount += slot.quantity;
+                }
             }
         }
-        
+
         // If the quantity of apples is 3 or more and the quantity of hoes is 1 or more, hide the GameObject of the task
         if (appleCount >= 3 && hoeCount >= 1)
         {
@@ -45,4 +49,5 @@ public class taskanimationscript : MonoBehaviour
             Component2.SetActive(true);
         }
     }
+
 }

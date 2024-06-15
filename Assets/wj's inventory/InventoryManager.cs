@@ -18,8 +18,8 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
     private bool menuActivated;
     public ItemSlot[] itemSlot;
     public Image selectedItemImage;
-    public Sprite axeSprite;
-    private bool hasGivenAxe = false;
+    public Sprite hoeSprite;
+    private bool hasGivenHoe = false;
     public Sprite blankSprite;
     private ToolUse toolUse; // Reference to the ToolUse script
     private Dictionary<string,ToolType> itemToolMapping;
@@ -51,9 +51,9 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
         */
     }
 
-    public bool HasGivenAxe()
+    public bool HasGivenHoe()
     {
-        return hasGivenAxe;
+        return hasGivenHoe;
     }
 
     private bool hasLoggedApple = false;
@@ -82,10 +82,10 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
                     Debug.Log("Apple quantity is 3 or more");
                     hasLoggedApple = true;
                 }
-                if (!hasGivenAxe)
+                if (!hasGivenHoe)
                 {
-                    AddItem("Axe", 1, axeSprite); 
-                    hasGivenAxe = true;
+                    AddItem("Hoe", 1, hoeSprite); 
+                    hasGivenHoe = true;
                 }
                 break;
             }
@@ -226,9 +226,9 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
 
     private Sprite GetSpriteForItem(string spriteName)
     {
-        if (spriteName == axeSprite.name)
+        if (spriteName == hoeSprite.name)
         {
-            return axeSprite;
+            return hoeSprite;
         }
 
         // Add additional conditions for other item sprites
