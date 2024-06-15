@@ -73,7 +73,7 @@ public class InventoryManager : MonoBehaviour
                 }
                 if (!hasGivenAxe)
                 {
-                    AddItem("axe", 1, axeSprite); 
+                    AddItem("Axe", 1, axeSprite); 
                     hasGivenAxe = true;
                 }
                 break;
