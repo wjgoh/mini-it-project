@@ -13,9 +13,17 @@ public class InventoryManager : MonoBehaviour
     private bool hasGivenHoe = false;
 
     private ToolUse toolUse; // Reference to the ToolUse script
+    private Dictionary<string,ToolType> itemToolMapping;
 
     void Start()
     {
+        itemToolMapping = new Dictionary<string, ToolType>
+        {
+            { "Axe", ToolType.Axe },
+            { "Hoe", ToolType.Hoe },
+            { "Watering", ToolType.Watering }
+        };
+
         selectedItemImage.gameObject.SetActive(false);
 
         toolUse = FindObjectOfType<ToolUse>(); // Find the ToolUse script in the scene
@@ -85,9 +93,15 @@ public class InventoryManager : MonoBehaviour
             if (itemSlot[i].isFull == false && (itemSlot[i].itemName == itemName || itemSlot[i].quantity == 0))
             {
                 int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemSprite);
-                
+            
                 // Assign the tag to the item
                 itemSlot[i].gameObject.tag = itemName;
+
+                // New: Assign ToolType based on the item name
+                if (itemToolMapping.TryGetValue(itemName, out ToolType toolType))
+                {
+                    itemSlot[i].toolType = toolType;
+                }
 
                 if (leftOverItems > 0)
                     leftOverItems = AddItem(itemName, leftOverItems, itemSprite);
