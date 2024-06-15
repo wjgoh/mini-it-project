@@ -43,8 +43,15 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         this.itemName = itemName;
 
         // Update image
-        this.itemSprite = itemSprite;
-        itemImage.sprite = itemSprite;
+        if (itemSprite != null)
+        {
+            this.itemSprite = itemSprite;
+            itemImage.sprite = itemSprite;
+        }
+        else
+        {
+            Debug.LogError("Item sprite is null for item: " + itemName);
+        }
 
         // Update quantity
         this.quantity += quantity;

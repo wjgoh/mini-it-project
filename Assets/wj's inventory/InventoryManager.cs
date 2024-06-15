@@ -195,10 +195,10 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
 
 
 
-    private Sprite GetSpriteForItem(string itemName)
+    private Sprite GetSpriteForItem(string spriteName)
     {
         // Load the sprite from the resources
-        Sprite sprite = Resources.Load<Sprite>("Art/Objects/" + itemName);
+        Sprite sprite = Resources.Load<Sprite>("Art/Objects/" + spriteName);
         return sprite;
     }
 
