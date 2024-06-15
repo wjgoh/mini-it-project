@@ -13,6 +13,7 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
     public Sprite axeSprite; // Add this line
     private bool hasGivenAxe = false; // Add this line
     public Sprite blankSprite;
+    public Sprite sprite;
     
     void Start()
     {
@@ -168,7 +169,8 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
                 {
                     itemName = slot.itemName,
                     quantity = slot.quantity,
-                    spriteName = slot.itemSprite.name
+                    spriteName = slot.itemSprite.name,
+                    sprite = slot.itemSprite 
                 };
                 data.inventoryItems.Add(itemData);
             }
@@ -181,6 +183,7 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
         {
             Sprite itemSprite = GetSpriteForItem(itemData.spriteName);
             AddItem(itemData.itemName, itemData.quantity, itemSprite);
+            AddItem(itemData.itemName, itemData.quantity, itemData.sprite);
         }
     }
 
@@ -201,5 +204,7 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
         public string itemName;
         public int quantity;
         public string spriteName;
+
+        public Sprite sprite { get; internal set; }
     }
 }    
