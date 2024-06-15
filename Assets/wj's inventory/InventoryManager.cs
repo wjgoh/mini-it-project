@@ -168,7 +168,7 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
                 {
                     itemName = slot.itemName,
                     quantity = slot.quantity, 
-                    spriteName = slot.itemSprite.name
+                    spriteName = slot.itemSprite != null ? slot.itemSprite.name : null
                 };
                 data.inventoryItems.Add(itemData);
             }
@@ -195,15 +195,11 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
 
 
 
-    private Sprite GetSpriteForItem(string spriteName)
+    private Sprite GetSpriteForItem(string itemName)
     {
-        if (spriteName == axeSprite.name)
-        {
-            return axeSprite;
-        }
-
-        // Add additional conditions for other item sprites
-        return blankSprite;
+        // Load the sprite from the resources
+        Sprite sprite = Resources.Load<Sprite>("Art/Objects/" + itemName);
+        return sprite;
     }
 
     [System.Serializable]
