@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : MonoBehaviour, IDataPersistence
 {
     public GameObject InventoryMenu;
     private bool menuActivated;
@@ -131,5 +131,53 @@ public class InventoryManager : MonoBehaviour
                 itemSlot.isFull = false;
             }
         }
+    }
+
+    //Save Load System
+
+    public void SaveData(ref GameData data)
+    {
+        data.inventoryItems.Clear();
+        foreach (var slot in itemSlot)
+        {
+            if (slot.quantity > 0)
+            {
+                InventoryItemData itemData = new InventoryItemData
+                {
+                    itemName = slot.itemName,
+                    quantity = slot.quantity,
+                    spriteName = slot.itemSprite.name
+                };
+                data.inventoryItems.Add(itemData);
+            }
+        }
+    }
+
+    public void LoadData(GameData data)
+    {
+        foreach (var itemData in data.inventoryItems)
+        {
+            Sprite itemSprite = GetSpriteForItem(itemData.spriteName);
+            AddItem(itemData.itemName, itemData.quantity, itemSprite);
+        }
+    }
+
+    private Sprite GetSpriteForItem(string spriteName)
+    {
+        if (spriteName == axeSprite.name)
+        {
+            return axeSprite;
+        }
+
+        // Add additional conditions for other item sprites
+        return blankSprite;
+    }
+
+    [System.Serializable]
+    public class InventoryItemData
+    {
+        public string itemName;
+        public int quantity;
+        public string spriteName;
     }
 }    
