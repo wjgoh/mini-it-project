@@ -11,6 +11,7 @@ TagManager:
   - Hoe
   - Watering
   - Plant
+  - None
   layers:
   - Default
   - TransparentFX
