@@ -9,9 +9,9 @@ public class InventoryManager : MonoBehaviour
     private bool menuActivated;
     public ItemSlot[] itemSlot;
     public Image selectedItemImage;
-    public Sprite hoeSprite;
-    private bool hasGivenHoe = false;
-
+    public Sprite axeSprite;
+    private bool hasGivenAxe = false;
+    public Sprite blankSprite;
     private ToolUse toolUse; // Reference to the ToolUse script
     private Dictionary<string,ToolType> itemToolMapping;
 
@@ -39,9 +39,10 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public bool HasGivenHoe()
+    public bool HasGivenAxe()
     {
-        return hasGivenHoe;
+
+        return hasGivenAxe;
     }
 
     private bool hasLoggedApple = false;
@@ -70,10 +71,10 @@ public class InventoryManager : MonoBehaviour
                     Debug.Log("Apple quantity is 3 or more");
                     hasLoggedApple = true;
                 }
-                if (!hasGivenHoe)
+                if (!hasGivenAxe)
                 {
-                    AddItem("hoe", 1, hoeSprite);
-                    hasGivenHoe = true;
+                    AddItem("axe", 1, axeSprite); 
+                    hasGivenAxe = true;
                 }
                 break;
             }
@@ -125,8 +126,8 @@ public class InventoryManager : MonoBehaviour
     {
         if (itemSprite == null)
         {
-            selectedItemImage.sprite = null;
-            selectedItemImage.gameObject.SetActive(false);
+            selectedItemImage.sprite = blankSprite; // Set to blank sprite
+            selectedItemImage.gameObject.SetActive(true); // Keep the image active
         }
         else
         {

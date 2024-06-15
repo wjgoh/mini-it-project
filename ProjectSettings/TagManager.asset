@@ -84,6 +84,9 @@ TagManager:
   - name: items
     uniqueID: 2144043677
     locked: 0
+  - name: NPC
+    uniqueID: 1984811753
+    locked: 0
   - name: Player
     uniqueID: 4003319691
     locked: 1
@@ -105,9 +108,6 @@ TagManager:
   - name: Butterfly
     uniqueID: 924034389
     locked: 1
-  - name: NPC
-    uniqueID: 1984811753
-    locked: 0
   - name: UI
     uniqueID: 980857805
     locked: 0
