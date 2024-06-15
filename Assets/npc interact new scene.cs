@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class npcinteractnew : MonoBehaviour
 {
     public Dialogue dialogueScript;
-    public int sceneNumber; // Add this line
+    public int sceneNumber;
+    public Vector2 playerPosition; // Add this line
     private bool playerDetected;
 
     //Detect trigger with player
@@ -33,9 +34,13 @@ public class npcinteractnew : MonoBehaviour
     //While detected if we interact start the dialogue
     private void Update()
     {
-        if(playerDetected && Input.GetKeyDown(KeyCode.E))
+        if(playerDetected && Input.GetKeyDown(KeyCode.Q))
         {
-            SceneManager.LoadScene(sceneNumber); // Modify this line
+            // Save the player's position
+            PlayerPrefs.SetFloat("PlayerPosX", playerPosition.x);
+            PlayerPrefs.SetFloat("PlayerPosY", playerPosition.y);
+
+            SceneManager.LoadScene(sceneNumber);
         }
     }
 }

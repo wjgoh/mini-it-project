@@ -51,17 +51,17 @@ public class InventoryManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && menuActivated)
         {
-            Time.timeScale = 1;
+            Time.timeScale = 1; // Resume the game
             InventoryMenu.SetActive(false);
             menuActivated = false;
         }
         else if (Input.GetKeyDown(KeyCode.E) && !menuActivated)
         {
-            Time.timeScale = 0;
+            Time.timeScale = 0; // Pause the game
             InventoryMenu.SetActive(true);
             menuActivated = true;
         }
-
+        
         foreach (var slot in itemSlot)
         {
             if (slot.itemName == "apple" && slot.quantity >= 3)

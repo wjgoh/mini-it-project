@@ -2107,6 +2107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneBuildIndex: 1
+  playerPosition: {x: 0, y: 0}
 --- !u!1 &263229376
 GameObject:
   m_ObjectHideFlags: 0
@@ -13444,6 +13445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneBuildIndex: 6
+  playerPosition: {x: -24.64307, y: 1.790056}
 --- !u!1 &2046532002
 GameObject:
   m_ObjectHideFlags: 0

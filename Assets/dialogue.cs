@@ -110,7 +110,7 @@ public class Dialogue : MonoBehaviour
         if (!started)
             return;
 
-        if(waitForNext && Input.GetKeyDown(KeyCode.E))
+        if(waitForNext && Input.GetKeyDown(KeyCode.Q))
         {
             waitForNext = false;
             index++;
