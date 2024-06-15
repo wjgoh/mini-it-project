@@ -8,6 +8,9 @@ TagManager:
   - Axe
   - Tree
   - item
+  - Hoe
+  - Watering
+  - Plant
   layers:
   - Default
   - TransparentFX

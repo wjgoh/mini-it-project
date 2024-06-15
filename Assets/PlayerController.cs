@@ -8,14 +8,17 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
     public AxeChopping axeChopping;
+    public Hoe hoeDirt;
+    public Watering watering;
 
     Vector2 movementInput;
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
-
     bool canMove = true;
+    private ToolType currentTool = ToolType.None; // The current selected tool
+
 
     void Start()
     {
@@ -96,8 +99,21 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     // Play the chopping animation and enable axe collider when mouse 1 is pressed
     void OnFire()
     {
-        animator.SetTrigger("Chop");
-        HandleAxeChopping();
+        if (currentTool == ToolType.Axe)
+        {
+            animator.SetTrigger("Chop");
+            HandleAxeChopping();
+        }
+        else if (currentTool == ToolType.Hoe)
+        {
+            animator.SetTrigger("Hoe");
+            HandleHoeDirt();
+        }
+        else if (currentTool == ToolType.Watering)
+        {
+            animator.SetTrigger("Water");
+            HandleWatering();
+        }
     }
 
     public void ControlAxeChopping(Vector2 movement, bool moving)
@@ -133,9 +149,85 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         UnlockMovement();
     }
 
+    public void ControlHoeDirt(Vector2 movement, bool moving)
+    {
+        LockMovement();
+
+        SetAnimationParameters(movement, moving);
+
+        if (moving)
+        {
+            if (movement.x > 0)
+            {
+                hoeDirt.HoeRight();
+            }
+            else if (movement.x < 0)
+            {
+                hoeDirt.HoeLeft();
+            }
+            else if (movement.y > 0)
+            {
+                hoeDirt.HoeUp();
+            }
+            else if (movement.y < 0)
+            {
+                hoeDirt.HoeDown();
+            }
+        }
+        else
+        {
+            hoeDirt.StopHoe();
+        }
+
+        UnlockMovement();
+    }
+
+    public void ControlWatering(Vector2 movement, bool moving)
+    {
+        LockMovement();
+
+        SetAnimationParameters(movement, moving);
+
+        if (moving)
+        {
+            if (movement.x > 0)
+            {
+                watering.WateringRight();
+            }
+            else if (movement.x < 0)
+            {
+                watering.WateringLeft();
+            }
+            else if (movement.y > 0)
+            {
+                watering.WateringUp();
+            }
+            else if (movement.y < 0)
+            {
+                watering.WateringDown();
+            }
+        }
+        else
+        {
+            watering.StopWatering();
+        }
+
+        UnlockMovement();
+    }
+
     public void HandleAxeChopping()
     {
         ControlAxeChopping(movementInput, movementInput != Vector2.zero);
+    }
+
+    public void HandleHoeDirt()
+    {
+        ControlHoeDirt(movementInput, movementInput != Vector2.zero);
+    }
+
+    public void HandleWatering()
+    {
+        ControlWatering(movementInput, movementInput != Vector2.zero);
     }
 
     private void LockMovement()
@@ -147,7 +239,13 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     {
         canMove = true;
     }
-    // save load feature
+
+    public void SetCurrentTool(ToolType tool)
+    {
+        currentTool = tool;
+    }
+
+    // Save/load feature
     public void LoadData(GameData data)
     {
         this.transform.position = data.playerPosition;
@@ -157,4 +255,12 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     {
         data.playerPosition = this.transform.position;
     }
+}
+
+public enum ToolType
+{
+    None,
+    Axe,
+    Hoe,
+    Watering
 }

@@ -8,36 +8,45 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryMenu;
     private bool menuActivated;
     public ItemSlot[] itemSlot;
-    public Image selectedItemImage; // Reference to the UI Image for the selected item
-    public Sprite axeSprite; // Add this line
-    private bool hasGivenAxe = false; // Add this line
+    public Image selectedItemImage;
+    public Sprite axeSprite;
+    private bool hasGivenAxe = false;
     public Sprite blankSprite;
-    
+    private ToolUse toolUse; // Reference to the ToolUse script
+    private Dictionary<string,ToolType> itemToolMapping;
+
     void Start()
     {
-        selectedItemImage.gameObject.SetActive(false); // Hide the image initially
+        itemToolMapping = new Dictionary<string, ToolType>
+        {
+            { "Axe", ToolType.Axe },
+            { "Hoe", ToolType.Hoe },
+            { "Watering", ToolType.Watering }
+        };
 
-        // Comment out or remove the following lines
-        // if (itemSlot.Length > 0)
-        // {
-        //     itemSlot[0].selectedShader.SetActive(true);
-        //     if (itemSlot[0].itemSprite != null) // Check if the first slot has an item
-        //     {
-        //         ShowSelectedItem(itemSlot[0]
-        //             .itemSprite); // Update the selectedItemImage with the sprite of the first slot's item
-        //     }
-        // }
+        selectedItemImage.gameObject.SetActive(false);
+
+        toolUse = FindObjectOfType<ToolUse>(); // Find the ToolUse script in the scene
+
+        if (itemSlot.Length > 0)
+        {
+            itemSlot[0].selectedShader.SetActive(true);
+            if (itemSlot[0].itemSprite != null)
+            {
+                ShowSelectedItem(itemSlot[0].itemSprite);
+                toolUse.SetCurrentTool(itemSlot[0].toolType); // Set the initial tool
+            }
+        }
     }
-    
+
     public bool HasGivenAxe()
     {
 
         return hasGivenAxe;
     }
 
-    
     private bool hasLoggedApple = false;
-    // Update is called once per frame
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && menuActivated)
@@ -53,7 +62,6 @@ public class InventoryManager : MonoBehaviour
             menuActivated = true;
         }
 
-        // Check for apple quantity
         foreach (var slot in itemSlot)
         {
             if (slot.itemName == "apple" && slot.quantity >= 3)
@@ -65,29 +73,43 @@ public class InventoryManager : MonoBehaviour
                 }
                 if (!hasGivenAxe)
                 {
-                    AddItem("axe", 1, axeSprite); 
+                    AddItem("Axe", 1, axeSprite); 
                     hasGivenAxe = true;
                 }
-
                 break;
             }
-        } 
+        }
+
+        if (itemSlot.Length > 0 && itemSlot[0].itemSprite != null && !selectedItemImage.gameObject.activeSelf)
+        {
+            ShowSelectedItem(itemSlot[0].itemSprite);
+            toolUse.SetCurrentTool(itemSlot[0].toolType); // Update tool when selecting an item
+        }
     }
 
     public int AddItem(string itemName, int quantity, Sprite itemSprite)
     {
         for (int i = 0; i < itemSlot.Length; i++)
         {
-            if (itemSlot[i].isFull == false && itemSlot[i].itemName == itemName || itemSlot[i].quantity == 0)
+            if (itemSlot[i].isFull == false && (itemSlot[i].itemName == itemName || itemSlot[i].quantity == 0))
             {
                 int leftOverItems = itemSlot[i].AddItem(itemName, quantity, itemSprite);
+            
+                // Assign the tag to the item
+                itemSlot[i].gameObject.tag = itemName;
+
+                // New: Assign ToolType based on the item name
+                if (itemToolMapping.TryGetValue(itemName, out ToolType toolType))
+                {
+                    itemSlot[i].toolType = toolType;
+                }
+
                 if (leftOverItems > 0)
                     leftOverItems = AddItem(itemName, leftOverItems, itemSprite);
 
                 return leftOverItems;
             }
         }
-
         return quantity;
     }
 
@@ -113,16 +135,14 @@ public class InventoryManager : MonoBehaviour
             selectedItemImage.gameObject.SetActive(true);
         }
     }
-    
+
     public void DropItem(ItemSlot itemSlot)
     {
         if (itemSlot.quantity > 0)
         {
-            // Instantiate the item at the player's position
             var player = GameObject.FindWithTag("Player");
             var item = Instantiate(Resources.Load<GameObject>("Prefabs/" + itemSlot.itemName), player.transform.position, Quaternion.identity);
 
-            // Decrease the quantity of the item in the inventory
             itemSlot.quantity--;
             if (itemSlot.quantity == 0)
             {
@@ -132,4 +152,4 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
-}    
+}

@@ -23,7 +23,7 @@ public class PlantGrowing : MonoBehaviour
         StartCoroutine(GrowPlant());
     }
 
-    IEnumerator GrowPlant()
+    public IEnumerator GrowPlant()
     {
         while (true)
         {
