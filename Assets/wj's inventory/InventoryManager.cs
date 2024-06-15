@@ -4,6 +4,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+public class InventoryItemData
+{
+    public string itemName;
+    public int quantity;
+    public string spriteName;
+}
+
 public class InventoryManager : MonoBehaviour, IDataPersistence
 {
     public GameObject InventoryMenu;
@@ -29,6 +37,8 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
 
         toolUse = FindObjectOfType<ToolUse>(); // Find the ToolUse script in the scene
 
+        // Commented out the section that selects the first item by default
+        /*
         if (itemSlot.Length > 0)
         {
             itemSlot[0].selectedShader.SetActive(true);
@@ -38,11 +48,11 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
                 toolUse.SetCurrentTool(itemSlot[0].toolType); // Set the initial tool
             }
         }
+        */
     }
 
     public bool HasGivenAxe()
     {
-
         return hasGivenAxe;
     }
 
@@ -85,16 +95,14 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
         if (Input.GetKeyDown(KeyCode.K))
         {
             ClearInventory();
-
+        }
 
         if (itemSlot.Length > 0 && itemSlot[0].itemSprite != null && !selectedItemImage.gameObject.activeSelf)
         {
             ShowSelectedItem(itemSlot[0].itemSprite);
             toolUse.SetCurrentTool(itemSlot[0].toolType); // Update tool when selecting an item
-
         }
     }
-
 
     public void ClearInventory()
     {
@@ -108,8 +116,7 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
         // Deselect all slots and update UI (if needed)
         DeselectAllSlots();
         ShowSelectedItem(null); // Clear selected item image or hide it
-    
-     }
+    }
 
     public int AddItem(string itemName, int quantity, Sprite itemSprite)
     {
@@ -177,7 +184,6 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
         }
     }
 
-
     //Save Load System
 
     public void SaveData(ref GameData data)
@@ -228,12 +234,5 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
         // Add additional conditions for other item sprites
         return blankSprite;
     }
+}
 
-    [System.Serializable]
-    public class InventoryItemData
-    {
-        public string itemName;
-        public int quantity;
-        public string spriteName;
-    }
-}    
