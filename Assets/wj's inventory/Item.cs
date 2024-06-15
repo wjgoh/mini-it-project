@@ -3,8 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public class Item : MonoBehaviour, IDataPersistence
 {
+    //Ayden from here 
+
+    [SerializeField]
+    private string id;
+    [ContextMenu("Generate guid for id")]
+    private void GenerateGuid()
+    {
+        id = Guid.NewGuid().ToString();
+    }
+    //To here
+
     [SerializeField]
     private string itemName;
 
@@ -53,5 +64,27 @@ public class Item : MonoBehaviour
             Destroy(gameObject);
         else
             quantity = leftOverItems;
+    }
+
+    // Save load system
+
+    public void LoadData(GameData data)
+    {
+        if (data.itemsCollected.TryGetValue(id, out bool isCollected) && isCollected)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        if (data.itemsCollected.ContainsKey(id))
+        {
+            data.itemsCollected[id] = true;
+        }
+        else
+        {
+            data.itemsCollected.Add(id, true);
+        }
     }
 }

@@ -1,9 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryManager : MonoBehaviour
+[System.Serializable]
+public class InventoryItemData
+{
+    public string itemName;
+    public int quantity;
+    public string spriteName;
+}
+
+public class InventoryManager : MonoBehaviour, IDataPersistence
 {
     public GameObject InventoryMenu;
     private bool menuActivated;
@@ -28,6 +37,8 @@ public class InventoryManager : MonoBehaviour
 
         toolUse = FindObjectOfType<ToolUse>(); // Find the ToolUse script in the scene
 
+        // Commented out the section that selects the first item by default
+        /*
         if (itemSlot.Length > 0)
         {
             itemSlot[0].selectedShader.SetActive(true);
@@ -37,11 +48,11 @@ public class InventoryManager : MonoBehaviour
                 toolUse.SetCurrentTool(itemSlot[0].toolType); // Set the initial tool
             }
         }
+        */
     }
 
     public bool HasGivenAxe()
     {
-
         return hasGivenAxe;
     }
 
@@ -80,11 +91,31 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
+        // Clear inventory on 'K' key press
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            ClearInventory();
+        }
+
         if (itemSlot.Length > 0 && itemSlot[0].itemSprite != null && !selectedItemImage.gameObject.activeSelf)
         {
             ShowSelectedItem(itemSlot[0].itemSprite);
             toolUse.SetCurrentTool(itemSlot[0].toolType); // Update tool when selecting an item
         }
+    }
+
+    public void ClearInventory()
+    {
+        foreach (var slot in itemSlot)
+        {
+            slot.itemName = null;
+            slot.itemSprite = null;
+            slot.quantity = 0;
+            slot.isFull = false;
+        }
+        // Deselect all slots and update UI (if needed)
+        DeselectAllSlots();
+        ShowSelectedItem(null); // Clear selected item image or hide it
     }
 
     public int AddItem(string itemName, int quantity, Sprite itemSprite)
@@ -152,4 +183,56 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
+
+    //Save Load System
+
+    public void SaveData(ref GameData data)
+    {
+        data.inventoryItems.Clear();
+        foreach (var slot in itemSlot)
+        {
+            if (slot.quantity > 0)
+            {
+                InventoryItemData itemData = new InventoryItemData
+                {
+                    itemName = slot.itemName,
+                    quantity = slot.quantity, 
+                    spriteName = slot.itemSprite.name
+                };
+                data.inventoryItems.Add(itemData);
+            }
+        }
+    }
+
+    public void LoadData(GameData data)
+    {
+        foreach (var itemData in data.inventoryItems)
+        {
+            Sprite itemSprite = GetSpriteForItem(itemData.spriteName);
+            AddItem(itemData.itemName, itemData.quantity, itemSprite);
+
+            if (itemSprite == null)
+            {
+                selectedItemImage.sprite = blankSprite; // Set to blank sprite
+                selectedItemImage.gameObject.SetActive(true); // Keep the image active
+            }
+            else
+            {
+                selectedItemImage.sprite = itemSprite;
+                selectedItemImage.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    private Sprite GetSpriteForItem(string spriteName)
+    {
+        if (spriteName == axeSprite.name)
+        {
+            return axeSprite;
+        }
+
+        // Add additional conditions for other item sprites
+        return blankSprite;
+    }
 }
+

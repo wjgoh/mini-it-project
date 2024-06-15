@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneBuildIndex: 1
+  playerPosition: {x: 0, y: 0}
 --- !u!61 &72857112
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9262,6 +9263,8 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   axeChopping: {fileID: 1937507427}
+  hoeDirt: {fileID: 0}
+  watering: {fileID: 0}
 --- !u!212 &1937507429
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9505,6 +9508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneBuildIndex: 1
+  playerPosition: {x: 0, y: 0}
 --- !u!61 &2079685931
 BoxCollider2D:
   m_ObjectHideFlags: 0
