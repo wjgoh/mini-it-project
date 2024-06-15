@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +9,7 @@ public class Item : MonoBehaviour, IDataPersistence
     [ContextMenu("Generate guid for id")]
     private void GenerateGuid()
     {
-        id = Guid.NewGuid().ToString();
+        id = System.Guid.NewGuid().ToString();
     }
 
     [SerializeField] private string itemName;
@@ -53,9 +52,29 @@ public class Item : MonoBehaviour, IDataPersistence
     {
         int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite);
         if (leftOverItems <= 0)
+        {
+            SaveCollectedItem(); // Mark the item as collected before destroying it
             Destroy(gameObject);
+        }
         else
+        {
             quantity = leftOverItems;
+        }
+    }
+
+    private void SaveCollectedItem()
+    {
+        // Save item as collected
+        GameData data = DataPersistenceManager.instance.GetGameData();
+        if (data.itemsCollected.ContainsKey(id))
+        {
+            data.itemsCollected[id] = true;
+        }
+        else
+        {
+            data.itemsCollected.Add(id, true);
+        }
+        DataPersistenceManager.instance.SaveGame();
     }
 
     public void LoadData(GameData data)
