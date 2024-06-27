@@ -75,7 +75,7 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
         
         foreach (var slot in itemSlot)
         {
-            if (slot.itemName == "apple" && slot.quantity >= 3)
+            if (slot.itemName == "apple" && slot.quantity >= 2)
             {
                 if (!hasLoggedApple)
                 {
@@ -84,7 +84,7 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
                 }
                 if (!hasGivenHoe)
                 {
-                    AddItem("Hoe", 1, hoeSprite); 
+                    AddItem("hoe", 1, hoeSprite); 
                     hasGivenHoe = true;
                 }
                 break;

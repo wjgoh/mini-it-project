@@ -9,6 +9,8 @@ public class npcinteractnew : MonoBehaviour
     public int sceneNumber;
     public Vector2 playerPosition; // Add this line
     private bool playerDetected;
+    public CustomLogger customLogger;
+    
 
     //Detect trigger with player
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,8 +41,16 @@ public class npcinteractnew : MonoBehaviour
             // Save the player's position
             PlayerPrefs.SetFloat("PlayerPosX", playerPosition.x);
             PlayerPrefs.SetFloat("PlayerPosY", playerPosition.y);
-
-            SceneManager.LoadScene(sceneNumber);
+            customLogger.Log("visits tutorial world");
+            
+            StartCoroutine(LoadSceneAfterDelay(sceneNumber, 0.2f));
         }
+    }
+
+    private IEnumerator LoadSceneAfterDelay(int sceneNumber, float delay)
+    {
+        
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneNumber);
     }
 }

@@ -6,8 +6,16 @@ using UnityEngine;
 public class taskanimationscript : MonoBehaviour
 {
     public InventoryManager inventoryManager; // Reference to the InventoryManager script
-    public Component taskComponent; // The task component that should be removed
-    public GameObject Component2; // The other component that should be activated when taskComponent is deactivated
+    public Component task1; // The task component that should be removed
+    public GameObject task1i2; // The other component that should be activated when task1 is deactivated
+    public Component task2;
+    public GameObject task2i2;
+    public CustomLogger customLogger; // Reference to the CustomLogger script
+
+    private bool task1Completed = false; // Flag to track if the task has been completed
+    private bool task1i2Completed = false;
+    private bool task2Completed = false;
+    private bool task2i2Completed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,16 +46,22 @@ public class taskanimationscript : MonoBehaviour
         }
 
         // If the quantity of apples is 3 or more and the quantity of hoes is 1 or more, hide the GameObject of the task
-        if (appleCount >= 3 && hoeCount >= 1)
+        if (appleCount >= 2 && hoeCount >= 1)
         {
-            taskComponent.gameObject.SetActive(false);
+            task1.gameObject.SetActive(false);
         }
 
-        // If taskComponent is deactivated, activate the other component
-        if (!taskComponent.gameObject.activeSelf)
+        // If task1 is deactivated and the task has not been completed yet, activate the other component and log the message
+        if (!task1.gameObject.activeSelf && !task1Completed)
         {
-            Component2.SetActive(true);
+            task1i2.SetActive(true);
+            customLogger.Log("task 1 finished"); // Use the custom logger to log the message
+            task1Completed = true; // Set the flag to true to indicate that the task has been completed
+        }
+        if (customLogger.message == "visits tutorial world" && !task2Completed)
+        {
+            task2.gameObject.SetActive(false);
+            task2Completed = true;
         }
     }
-
 }
