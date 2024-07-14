@@ -20,7 +20,7 @@ public class taskanimationscript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        // Initialize or setup if necessary
     }
 
     // Update is called once per frame
@@ -45,7 +45,7 @@ public class taskanimationscript : MonoBehaviour
             }
         }
 
-        // If the quantity of apples is 3 or more and the quantity of hoes is 1 or more, hide the GameObject of the task
+        // If the quantity of apples is 2 or more and the quantity of hoes is 1 or more, hide the GameObject of the task
         if (appleCount >= 2 && hoeCount >= 1)
         {
             task1.gameObject.SetActive(false);
@@ -58,10 +58,21 @@ public class taskanimationscript : MonoBehaviour
             customLogger.Log("task 1 finished"); // Use the custom logger to log the message
             task1Completed = true; // Set the flag to true to indicate that the task has been completed
         }
+
+        // Check if the custom logger's message is "visits tutorial world" and task2 is not completed
         if (customLogger.message == "visits tutorial world" && !task2Completed)
         {
-            task2.gameObject.SetActive(false);
             task2Completed = true;
+            task2.gameObject.SetActive(false);
+            task2i2.gameObject.SetActive(true);
         }
+    }
+
+    // Public method to mark task2 as done
+    public void task2done()
+    {
+        task2Completed = true;
+        task2.gameObject.SetActive(false);
+        task2i2.gameObject.SetActive(true);
     }
 }

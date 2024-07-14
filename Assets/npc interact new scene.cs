@@ -3,20 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class npcinteractnew : MonoBehaviour
+public class npcinteractnewscene : MonoBehaviour
 {
     public Dialogue dialogueScript;
     public int sceneNumber;
     public Vector2 playerPosition; // Add this line
     private bool playerDetected;
     public CustomLogger customLogger;
-    
+    private taskanimationscript taskAnimationScript; // Reference to the taskanimationscript
 
-    //Detect trigger with player
+    // Start is called before the first frame update
+    void Start()
+    {
+        // Find the taskanimationscript in the scene (adjust as necessary)
+        taskAnimationScript = FindObjectOfType<taskanimationscript>();
+
+        // Alternatively, you can set it via the Inspector if you prefer
+        // taskAnimationScript = taskAnimationGameObject.GetComponent<taskanimationscript>();
+    }
+
+    // Detect trigger with player
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //If we triggerd the player enable playerdeteced and show indicator
-        if(collision.tag == "Player")
+        // If we trigger the player, enable playerDetected and show indicator
+        if (collision.tag == "Player")
         {
             playerDetected = true;
             dialogueScript.ToggleIndicator(playerDetected);
@@ -25,7 +35,7 @@ public class npcinteractnew : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        //If we lost trigger  with the player disable playerdeteced and hide indicator
+        // If we lose trigger with the player, disable playerDetected and hide indicator
         if (collision.tag == "Player")
         {
             playerDetected = false;
@@ -33,23 +43,33 @@ public class npcinteractnew : MonoBehaviour
             dialogueScript.EndDialogue();
         }
     }
-    //While detected if we interact start the dialogue
+
+    // While detected, if we interact, start the dialogue
     private void Update()
     {
-        if(playerDetected && Input.GetKeyDown(KeyCode.Q))
+        if (playerDetected && Input.GetKeyDown(KeyCode.Q))
         {
             // Save the player's position
             PlayerPrefs.SetFloat("PlayerPosX", playerPosition.x);
             PlayerPrefs.SetFloat("PlayerPosY", playerPosition.y);
-            customLogger.Log("visits tutorial world");
-            
+            Debug.Log("visits tutorial world");
+
+            // Call task2done() if the script reference is set
+            if (taskAnimationScript != null)
+            {
+                taskAnimationScript.task2done();
+            }
+            else
+            {
+                Debug.LogWarning("taskanimationscript not found!");
+            }
+
             StartCoroutine(LoadSceneAfterDelay(sceneNumber, 0.2f));
         }
     }
 
     private IEnumerator LoadSceneAfterDelay(int sceneNumber, float delay)
     {
-        
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(sceneNumber);
     }
