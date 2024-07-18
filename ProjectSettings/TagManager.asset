@@ -109,6 +109,9 @@ TagManager:
   - name: Butterfly
     uniqueID: 924034389
     locked: 1
+  - name: Interaction
+    uniqueID: 3308076465
+    locked: 0
   - name: UI
     uniqueID: 980857805
     locked: 0
