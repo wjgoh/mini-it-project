@@ -50,7 +50,18 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
         }
         */
     }
-
+    
+    public ItemSlot GetSelectedSlot()
+    {
+        foreach (var slot in itemSlot)
+        {
+            if (slot.thisItemSelected)
+            {
+                return slot;
+            }
+        }
+        return null;
+    }
     public bool HasGivenHoe()
     {
         return hasGivenHoe;

@@ -38,6 +38,7 @@ public class Item : MonoBehaviour, IDataPersistence
         if (collision.gameObject.tag == "Player")
         {
             playerInRange = true;
+            
         }
     }
 

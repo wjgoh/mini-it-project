@@ -109,6 +109,8 @@ public class Dialogueforcow : MonoBehaviour
 
     private void Update()
     {
+        
+        
         if (!started)
             return;
 
@@ -135,6 +137,7 @@ public class Dialogueforcow : MonoBehaviour
                 //If not end the dialogue process
                 ToggleIndicator(true);
                 EndDialogue();
+                started = false; // Ensure that the dialogue doesn't restart
             }
         }
     }

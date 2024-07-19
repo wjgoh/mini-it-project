@@ -5,6 +5,7 @@ using UnityEngine;
 public class DialogueTrigger2 : MonoBehaviour
 {
     public Dialogueforcow dialogueScript;
+    public Test_random npcMovement;
     private bool playerDetected;
 
     //Detect trigger with player
@@ -15,6 +16,7 @@ public class DialogueTrigger2 : MonoBehaviour
         {
             playerDetected = true;
             dialogueScript.ToggleIndicator(playerDetected);
+            npcMovement.StopMovement();
         }
     }
 
@@ -31,9 +33,10 @@ public class DialogueTrigger2 : MonoBehaviour
     //While detected if we interact start the dialogue
     private void Update()
     {
-        if(playerDetected && Input.GetKeyDown(KeyCode.Q))
+        if(playerDetected && Input.GetKeyDown(KeyCode.Q) )
         {
             dialogueScript.StartDialogue();
+           
         }
     }
 }
