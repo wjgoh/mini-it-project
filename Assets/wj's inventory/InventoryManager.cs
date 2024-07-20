@@ -211,6 +211,7 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
                     itemName = slot.itemName,
                     quantity = slot.quantity, 
                     spriteName = slot.itemSprite.name
+                    
                 };
                 data.inventoryItems.Add(itemData);
             }
