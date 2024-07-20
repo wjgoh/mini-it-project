@@ -349,7 +349,7 @@ TextureImporter:
         width: 28
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -370,7 +370,7 @@ TextureImporter:
         width: 28
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -378,6 +378,48 @@ TextureImporter:
       bones: []
       spriteID: 1992cacb18702e44099c5c22e63358f3
       internalID: -2001860254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet for Basic Pack_13
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 200
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16bdb4c8fdcb037428084a3b0e35651e
+      internalID: 1057002504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet for Basic Pack_14
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 113
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a57b5672e6eb240af0cf447db34dc1
+      internalID: -1462097766
       vertices: []
       indices: 
       edges: []
@@ -398,6 +440,8 @@ TextureImporter:
       Sprite sheet for Basic Pack_10: -2024371317
       Sprite sheet for Basic Pack_11: -557073768
       Sprite sheet for Basic Pack_12: -2001860254
+      Sprite sheet for Basic Pack_13: 1057002504
+      Sprite sheet for Basic Pack_14: -1462097766
       Sprite sheet for Basic Pack_2: 354736093
       Sprite sheet for Basic Pack_3: 1490995891
       Sprite sheet for Basic Pack_4: 845688825
