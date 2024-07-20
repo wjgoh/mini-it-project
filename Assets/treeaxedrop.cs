@@ -43,7 +43,7 @@ public class treeaxedrop : MonoBehaviour
     
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && playerInRange)
+        if(Input.GetMouseButtonDown(0) && playerInRange && InventoryManager.selectedItemName == "Axe")
         {
             DropApple();
         }

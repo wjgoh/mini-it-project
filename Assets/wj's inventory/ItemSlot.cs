@@ -83,6 +83,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
 public void OnLeftClick()
 {
+        inventoryManager.selectedItemName = itemName;
+
         if (thisItemSelected)
         {
             inventoryManager.DeselectAllSlots();

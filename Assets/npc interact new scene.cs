@@ -11,6 +11,8 @@ public class npcinteractnewscene : MonoBehaviour
     private bool playerDetected;
     public CustomLogger customLogger;
     private taskanimationscript taskAnimationScript; // Reference to the taskanimationscript
+    public bool visitedTutorialWorld { get; set; }
+
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +55,8 @@ public class npcinteractnewscene : MonoBehaviour
             PlayerPrefs.SetFloat("PlayerPosX", playerPosition.x);
             PlayerPrefs.SetFloat("PlayerPosY", playerPosition.y);
             Debug.Log("visits tutorial world");
+            visitedTutorialWorld = true;
+
 
             // Call task2done() if the script reference is set
             if (taskAnimationScript != null)
@@ -61,7 +65,7 @@ public class npcinteractnewscene : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("taskanimationscript not found!");
+                Debug.Log("taskanimationscript not found!");
             }
 
             StartCoroutine(LoadSceneAfterDelay(sceneNumber, 0.2f));

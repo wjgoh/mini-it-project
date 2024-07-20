@@ -14,6 +14,8 @@ public class InventoryItemData
 
 public class InventoryManager : MonoBehaviour, IDataPersistence
 {
+    public string selectedItemName { get; set; }
+
     public GameObject InventoryMenu;
     private bool menuActivated;
     public ItemSlot[] itemSlot;

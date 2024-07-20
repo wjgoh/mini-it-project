@@ -10,6 +10,7 @@ public class taskanimationscript : MonoBehaviour
     public GameObject task1i2; // The other component that should be activated when task1 is deactivated
     public Component task2;
     public GameObject task2i2;
+    public npcinteractnewscene npcInteractNewScene; // Reference to the npcinteractnewscene script
     public CustomLogger customLogger; // Reference to the CustomLogger script
 
     private bool task1Completed = false; // Flag to track if the task has been completed
@@ -60,8 +61,7 @@ public class taskanimationscript : MonoBehaviour
         }
 
         // Check if the custom logger's message is "visits tutorial world" and task2 is not completed
-        if (customLogger.message == "visits tutorial world" && !task2Completed)
-        {
+        if (npcInteractNewScene.visitedTutorialWorld && !task2Completed)        {
             task2Completed = true;
             task2.gameObject.SetActive(false);
             task2i2.gameObject.SetActive(true);
