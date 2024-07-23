@@ -21,9 +21,9 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     // ITEM SLOT
     [SerializeField]
-    private TMP_Text quantityText;
+    public TMP_Text quantityText;
     [SerializeField]
-    private Image itemImage;
+    public Image itemImage;
 
     public GameObject selectedShader;
     public bool thisItemSelected;
@@ -67,7 +67,34 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
         return 0;
     }
+    
+    public bool RemoveItem(int quantity)
+    {
+        Debug.Log($"RemoveItem called with quantity: {quantity}");
 
+        if (this.quantity >= quantity)
+        {
+            Debug.Log($"Current quantity before removal: {this.quantity}");
+            this.quantity -= quantity;
+            Debug.Log($"Current quantity after removal: {this.quantity}");
+
+            if (this.quantity == 0)
+            {
+                this.itemName = null;
+                this.itemSprite = null;
+                this.isFull = false;
+                this.itemImage.sprite = null; // Set the item image to null
+            }
+
+            quantityText.text = this.quantity.ToString();
+            return true;
+        }
+        else
+        {
+            Debug.Log("Not enough quantity to remove");
+            return false;
+        }
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)

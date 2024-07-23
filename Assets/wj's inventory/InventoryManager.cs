@@ -10,7 +10,11 @@ public class InventoryItemData
     public string itemName;
     public int quantity;
     public string spriteName;
+    public ItemSlot[] itemSlot;
+    
 }
+
+
 
 public class InventoryManager : MonoBehaviour, IDataPersistence
 {
@@ -25,6 +29,7 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
     public Sprite blankSprite;
     private ToolUse toolUse; // Reference to the ToolUse script
     private Dictionary<string,ToolType> itemToolMapping;
+    
 
     void Start()
     {
@@ -67,6 +72,25 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
     public bool HasGivenHoe()
     {
         return hasGivenHoe;
+    }
+    
+    public void RefreshInventory()
+    {
+        foreach (var slot in itemSlot)
+        {
+            if (slot.quantity > 0)
+            {
+                slot.itemImage.sprite = slot.itemSprite;
+                slot.quantityText.text = slot.quantity.ToString();
+                slot.quantityText.enabled = true;
+            }
+            else
+            {
+                slot.itemImage.sprite = blankSprite; // Set the item image to blank sprite
+                slot.quantityText.text = "";
+                slot.quantityText.enabled = false;
+            }
+        }
     }
 
     private bool hasLoggedApple = false;
@@ -155,6 +179,37 @@ public class InventoryManager : MonoBehaviour, IDataPersistence
             }
         }
         return quantity;
+    }
+    
+    public bool RemoveItem(string itemName, int quantity)
+    {
+        for (int i = 0; i < itemSlot.Length; i++)
+        {
+            if (itemSlot[i].itemName == itemName)
+            {
+                if (itemSlot[i].quantity >= quantity)
+                {
+                    itemSlot[i].quantity -= quantity;
+
+                    if (itemSlot[i].quantity == 0)
+                    {
+                        itemSlot[i].itemName = null;
+                        itemSlot[i].itemSprite = null;
+                        itemSlot[i].isFull = false;
+                    }
+
+                    Debug.Log($"Removed {quantity} of {itemName} from slot {i}");
+                    return true;
+                }
+                else
+                {
+                    Debug.Log($"Not enough quantity of {itemName} in slot {i} to remove {quantity}");
+                }
+            }
+        }
+
+        Debug.Log($"Item {itemName} not found in any slot");
+        return false;
     }
 
     public void DeselectAllSlots()
