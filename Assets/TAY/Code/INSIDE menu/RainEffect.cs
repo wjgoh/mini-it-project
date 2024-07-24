@@ -16,7 +16,7 @@ public class RainController : MonoBehaviour
         while (true)
         {
             
-            float timeBeforeRain = Random.Range(20f, 200f);
+            float timeBeforeRain = Random.Range(40f, 300f);
             yield return new WaitForSeconds(timeBeforeRain);
 
             
