@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.IO;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 public class FileDataHandler 
 {
@@ -10,11 +11,16 @@ public class FileDataHandler
 
     private string dataFileName = "";
 
+    private bool useEncryption = false;
 
-    public FileDataHandler(string dataDirPath, string dataFileName)
+    private readonly string encryptionCodeWord = "word";
+
+
+    public FileDataHandler(string dataDirPath, string dataFileName, bool useEncryption)
     {
         this.dataDirPath = dataDirPath;
         this.dataFileName = dataFileName;
+        this.useEncryption = useEncryption;
     }
 
     public GameData Load()
@@ -34,6 +40,13 @@ public class FileDataHandler
                     {
                         dataToLoad = reader.ReadToEnd();
                     }
+                }
+
+                //optional decrypt data
+
+            if (useEncryption)
+                {
+                    dataToLoad = EncryptDecrypt(dataToLoad);
                 }
 
                 // deserialize the data from Json back into the C# object
@@ -60,6 +73,12 @@ public class FileDataHandler
             // serialize the C# game data object to Json
             string dataToStore = JsonUtility.ToJson(data, true);
 
+            //optional encryption
+            if (useEncryption)
+            {
+                dataToStore = EncryptDecrypt(dataToStore);
+            }
+
             // write the serialized data to the file 
             using (FileStream stream = new FileStream(fullPath, FileMode.Create))
             {
@@ -73,5 +92,16 @@ public class FileDataHandler
         {
             Debug.LogError("Error occured when trying to save data to file: " + fullPath + "\n" + e);
         }
+    }
+
+    //XOR encryption
+    private string EncryptDecrypt(string data)
+    {
+        string modifiedData = "";
+        for (int i = 0; i < data.Length; i++) 
+        {
+            modifiedData += (char)(data[i] ^ encryptionCodeWord[i % encryptionCodeWord.Length]);
+        }
+        return modifiedData;
     }
 }
